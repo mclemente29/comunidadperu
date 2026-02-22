@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comunidad Rimanakuy – Cultura Andina · Londres</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C8922A;--gold-lt:#D9A840;--gold-dim:rgba(200,146,42,.16);
+  --terra:#B5441B;--terra-dim:rgba(181,68,27,.1);
+  --earth:#2A1A0A;--earth3:#130B02;--forest:#1B3A2A;
+  --cream:#F5EDD8;--cream2:#FBF6EC;--cream3:#EEE3C8;
+  --text:rgba(26,14,5,.84);--text-lt:rgba(26,14,5,.52);
+  --od:rgba(245,237,216,.82);--odd:rgba(245,237,216,.48)
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:var(--cream2);color:var(--text);overflow-x:hidden}
+img{display:block;max-width:100%}
+.stripe{width:100%;height:14px;background:repeating-linear-gradient(90deg,#B5441B 0 12px,#C8922A 12px 24px,#1B3A2A 24px 36px,#C8922A 36px 48px,#B5441B 48px 60px,#2A1A0A 60px 72px)}
+.stripe-sm{height:8px;opacity:.65;background:repeating-linear-gradient(90deg,#C8922A 0 8px,#B5441B 8px 16px,#1B3A2A 16px 24px,#C8922A 24px 32px)}
+nav{background:var(--earth);position:sticky;top:0;z-index:1000;box-shadow:0 2px 24px rgba(0,0,0,.55)}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:62px}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo-gem{width:36px;height:36px;border:2px solid var(--gold);display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:3px;position:relative;flex-shrink:0}
+.logo-gem::after{content:'';position:absolute;inset:5px;border:1px solid rgba(200,146,42,.35)}
+.lg-c{background:var(--gold)}.lg-c:nth-child(2n){background:var(--terra)}.lg-c:nth-child(3n){background:transparent;border:1px solid rgba(200,146,42,.25)}
+.lt1{font-family:'Cinzel',serif;font-size:13px;font-weight:800;color:var(--gold);letter-spacing:2px;line-height:1.1}
+.lt2{font-size:9px;letter-spacing:3px;color:rgba(200,146,42,.5);text-transform:uppercase}
+.nav-links{display:flex;gap:1px;list-style:none}
+.nav-links a{font-family:'Cinzel',serif;font-size:10.5px;font-weight:600;letter-spacing:1.5px;color:var(--odd);text-decoration:none;padding:8px 11px;text-transform:uppercase;transition:all .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);background:var(--gold-dim)}
+.langs{display:flex;gap:3px}
+.lbtn{font-family:'Cinzel',serif;font-size:10px;background:none;border:1px solid rgba(200,146,42,.32);color:rgba(200,146,42,.62);padding:4px 8px;cursor:pointer;letter-spacing:1px;transition:all .2s}
+.lbtn:hover,.lbtn.active{background:var(--gold);color:var(--earth);border-color:var(--gold)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.ham span{width:23px;height:2px;background:var(--gold)}
+#hero{position:relative;min-height:93vh;display:flex;align-items:center;overflow:hidden}
+.hbg{position:absolute;inset:0;background:linear-gradient(160deg,rgba(26,16,5,.9) 0%,rgba(26,16,5,.52) 48%,rgba(26,16,5,.8) 100%),url('peru5.jpg') center/cover no-repeat}
+.h-stripe{position:absolute;bottom:0;left:0;right:0;z-index:3}
+.h-wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:80px 24px 60px;display:grid;grid-template-columns:1fr 390px;gap:60px;align-items:center}
+.h-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.h-eline{width:34px;height:2px;background:var(--gold)}
+.h-eyebrow span{font-size:10px;font-weight:700;letter-spacing:4px;color:var(--gold);text-transform:uppercase}
+.h-title{font-family:'Cinzel',serif;font-size:clamp(34px,5vw,68px);font-weight:800;color:var(--cream);line-height:1.05;margin-bottom:7px}
+.h-title .acc{color:var(--gold);display:block}
+.h-qu{font-style:italic;font-size:15px;color:rgba(200,146,42,.6);letter-spacing:2px;margin-bottom:26px}
+.h-desc{font-size:16px;line-height:1.85;color:var(--od);max-width:500px;margin-bottom:36px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font-family:'Cinzel',serif;font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block;cursor:pointer;transition:all .25s;border:none}
+.btn-g{color:var(--earth);background:var(--gold);padding:12px 28px;clip-path:polygon(7px 0%,100% 0%,calc(100% - 7px) 100%,0% 100%)}
+.btn-g:hover{background:var(--gold-lt);transform:translateY(-2px)}
+.btn-o{color:var(--cream);background:transparent;padding:11px 26px;border:1.5px solid rgba(245,237,216,.38)}
+.btn-o:hover{border-color:var(--gold);color:var(--gold)}
+.h-stats{display:flex;gap:32px;margin-top:44px;padding-top:28px;border-top:1px solid rgba(200,146,42,.16)}
+.snum{font-family:'Cinzel',serif;font-size:26px;font-weight:800;color:var(--gold);display:block}
+.slbl{font-size:9px;letter-spacing:2px;color:rgba(245,237,216,.42);text-transform:uppercase}
+.hcard{background:rgba(245,237,216,.05);border:1px solid rgba(200,146,42,.2);backdrop-filter:blur(14px);padding:30px;position:relative}
+.hcard::before{content:'';position:absolute;top:-1px;left:18px;right:18px;height:3px;background:linear-gradient(90deg,var(--terra),var(--gold),var(--terra))}
+.c-lbl{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.c-lbl::after{content:'';flex:1;height:1px;background:rgba(200,146,42,.22)}
+.ev-item{padding:12px 0;border-bottom:1px solid rgba(245,237,216,.07)}
+.ev-item:last-child{border:none;padding-bottom:0}
+.ev-date{font-size:9.5px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:2px}
+.ev-name{font-family:'Cinzel',serif;font-size:12.5px;color:var(--cream);line-height:1.35}
+.ev-loc{font-size:11px;color:rgba(245,237,216,.42);margin-top:2px}
+section{scroll-margin-top:62px}
+.sw{max-width:1240px;margin:0 auto;padding:92px 24px}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:13px}
+.eyebrow span{font-family:'Cinzel',serif;font-size:9.5px;font-weight:600;letter-spacing:4px;color:var(--gold);text-transform:uppercase}
+.eline{height:1px;flex:1;background:linear-gradient(90deg,var(--gold),transparent)}
+.sec-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.8vw,42px);font-weight:800;color:var(--earth);line-height:1.1;margin-bottom:16px}
+.sec-title .g{color:var(--gold)}
+.sec-lead{font-size:15.5px;line-height:1.88;color:var(--text-lt);max-width:620px;margin-bottom:48px}
+.on-dark .sec-title{color:var(--cream)}.on-dark .sec-lead{color:var(--odd)}.on-dark .eyebrow span{color:var(--gold)}
+#mision{background:var(--earth)}
+.m-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+.vc{background:rgba(245,237,216,.04);border:1px solid rgba(200,146,42,.16);padding:22px 18px;position:relative;transition:all .3s}
+.vc:hover{background:rgba(245,237,216,.07);transform:translateY(-3px);border-color:rgba(200,146,42,.42)}
+.vc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--terra),var(--gold))}
+.vq{font-family:'Cinzel',serif;font-size:16px;font-weight:800;color:var(--gold);margin-bottom:3px}
+.ves{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(245,237,216,.42);margin-bottom:9px}
+.vd{font-size:13px;line-height:1.7;color:rgba(245,237,216,.7)}
+.principles{display:flex;flex-direction:column;gap:9px;margin-top:28px}
+.pr{display:flex;align-items:flex-start;gap:13px;padding:14px 16px;background:rgba(245,237,216,.03);border-left:3px solid var(--gold)}
+.pri{font-size:17px;flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:rgba(200,146,42,.1)}
+.prt{font-size:13px;line-height:1.7;color:rgba(245,237,216,.76)}.prt strong{color:var(--gold)}
+.ama{margin-top:16px;padding:14px 18px;background:rgba(200,146,42,.05);border:1px solid rgba(200,146,42,.18)}
+.ama-t{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:5px}
+.ama-s{font-size:10.5px;color:rgba(245,237,216,.42);letter-spacing:.5px}
+#noticias{background:var(--cream2)}
+.ng{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:26px}
+.nc{background:#fff;border:1px solid rgba(200,146,42,.12);overflow:hidden;transition:all .3s;cursor:pointer}
+.nc:hover{box-shadow:0 12px 38px rgba(200,146,42,.14);transform:translateY(-4px)}
+.nc-img{width:100%;height:200px;object-fit:cover;background:var(--earth)}
+.nc-ph{width:100%;height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--earth),var(--forest));position:relative;overflow:hidden}
+.nc-ph::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 10px,rgba(200,146,42,.04) 10px 20px)}
+.nc-phi{font-size:42px;z-index:1}
+.nc-body{padding:20px}
+.nc-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra);background:var(--terra-dim);padding:3px 7px;margin-bottom:9px}
+.nc-title{font-family:'Cinzel',serif;font-size:14.5px;color:var(--earth);line-height:1.42;margin-bottom:8px}
+.nc-exc{font-size:12.5px;line-height:1.7;color:var(--text-lt);margin-bottom:12px}
+.nc-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(200,146,42,.09);padding-top:11px}
+.nc-date{font-size:9.5px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase}
+.nc-link{font-size:9.5px;font-weight:700;letter-spacing:1.5px;color:var(--terra);text-decoration:none;text-transform:uppercase}
+#galeria{background:var(--earth)}
+.g-wrap{max-width:1240px;margin:0 auto;padding:0 24px 80px}
+.gg{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:200px 200px;gap:5px}
+.gi{overflow:hidden;position:relative;cursor:pointer}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gi:hover img{transform:scale(1.08)}
+.gi:nth-child(1){grid-column:span 2;grid-row:span 2}
+.lb-overlay{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:8000;display:none;align-items:center;justify-content:center}
+.lb-overlay.open{display:flex}
+.lb-img{max-width:90vw;max-height:85vh;object-fit:contain;border:2px solid rgba(200,146,42,.28)}
+.lb-x{position:absolute;top:22px;right:26px;font-size:26px;color:var(--gold);cursor:pointer;background:none;border:none;line-height:1}
+#biblioteca{background:var(--cream3)}
+.bib-tabs{display:flex;margin-bottom:44px;border-bottom:2px solid rgba(200,146,42,.13)}
+.btab{font-family:'Cinzel',serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:13px 20px;cursor:pointer;background:none;border:none;color:rgba(26,14,5,.42);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap}
+.btab:hover{color:var(--gold)}.btab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.bsec{display:none}.bsec.active{display:block}
+.bib-grid2{display:grid;grid-template-columns:1fr 360px;gap:60px;align-items:start;margin-bottom:44px}
+.bib-img{width:100%;height:250px;object-fit:cover;border:3px solid var(--gold);box-shadow:10px 10px 0 var(--earth)}
+.bib-links{display:flex;flex-direction:column;gap:9px;margin-top:24px}
+.bl{display:flex;align-items:center;gap:13px;padding:13px 16px;background:#fff;border:1px solid rgba(200,146,42,.16);text-decoration:none;transition:all .25s}
+.bl:hover{border-color:var(--gold);box-shadow:4px 4px 0 var(--gold);transform:translate(-2px,-2px)}
+.bl-icon{font-size:19px;width:36px;height:36px;background:rgba(200,146,42,.09);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bl-title{font-family:'Cinzel',serif;font-size:12px;font-weight:600;color:var(--earth)}
+.bl-sub{font-size:10px;color:var(--text-lt);margin-top:1px}
+.dato{margin-top:16px;padding:18px;background:var(--earth);border-left:4px solid var(--gold)}
+.dato-t{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:6px}
+.dato-d{font-size:12px;line-height:1.7;color:rgba(245,237,216,.62)}
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.dc{background:#fff;border:1px solid rgba(200,146,42,.12);padding:20px;position:relative;overflow:hidden;transition:all .25s}
+.dc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--terra),var(--gold))}
+.dc:hover{box-shadow:0 8px 26px rgba(200,146,42,.11);transform:translateY(-3px)}
+.dc-type{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--terra);background:var(--terra-dim);display:inline-block;padding:2px 7px;margin-bottom:10px}
+.dc-title{font-family:'Cinzel',serif;font-size:13.5px;color:var(--earth);line-height:1.38;margin-bottom:7px}
+.dc-meta{font-size:11px;color:var(--text-lt);line-height:1.6}
+.dc-cta{display:inline-block;margin-top:12px;font-size:9.5px;font-weight:700;letter-spacing:1.5px;color:var(--gold);text-decoration:none;text-transform:uppercase}
+.ag{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.ac{background:#fff;border:1px solid rgba(200,146,42,.12);padding:20px;transition:border .25s}
+.ac:hover{border-color:rgba(200,146,42,.35)}
+.a-tag{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:inline-block;padding:2px 7px;margin-bottom:9px}
+.t-pron{color:#1B3A2A;background:rgba(27,58,42,.09)}
+.t-mus{color:#6B3D8E;background:rgba(107,61,142,.09)}
+.t-pod{color:#1A3050;background:rgba(26,48,80,.09)}
+.t-rit{color:var(--terra);background:var(--terra-dim)}
+.t-lrn{color:var(--forest);background:rgba(27,58,42,.09)}
+.t-cnt{color:var(--gold);background:rgba(200,146,42,.08)}
+.a-title{font-family:'Cinzel',serif;font-size:13.5px;color:var(--earth);margin-bottom:6px}
+.a-desc{font-size:12px;color:var(--text-lt);line-height:1.65}
+.audio-pl{width:100%;height:34px;margin-top:11px;accent-color:var(--gold)}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.cs-steps{display:flex;flex-direction:column;gap:14px;margin-top:22px}
+.cst{display:flex;gap:13px;align-items:flex-start;padding:16px;background:rgba(200,146,42,.05);border-left:3px solid var(--gold)}
+.csn{font-family:'Cinzel',serif;font-size:20px;font-weight:800;color:var(--gold);flex-shrink:0;line-height:1;width:28px}
+.csd{font-size:13px;line-height:1.7;color:var(--text)}.csd strong{color:var(--earth);font-weight:700}
+.c-tipos{margin-top:18px;padding:16px;background:rgba(200,146,42,.07);border:1px solid rgba(200,146,42,.18)}
+.c-tipos-t{font-family:'Cinzel',serif;font-size:10px;color:var(--gold);letter-spacing:2px;margin-bottom:5px}
+.c-tipos-d{font-size:12px;line-height:1.8;color:var(--text-lt)}
+.cform{display:flex;flex-direction:column;gap:13px}
+.flbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,14,5,.58);font-weight:700;margin-bottom:3px}
+.finp,.fta,.fsel{width:100%;background:#fff;border:1px solid rgba(200,146,42,.18);color:var(--earth);padding:10px 13px;font-family:'Lato',sans-serif;font-size:13.5px;outline:none;transition:border .2s;resize:none;appearance:none}
+.finp:focus,.fta:focus,.fsel:focus{border-color:var(--gold)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#clases{background:var(--earth)}
+.cl-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.flyer{background:rgba(245,237,216,.04);border:1px solid rgba(200,146,42,.2);padding:32px;position:relative;overflow:hidden}
+.flyer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--terra),var(--gold),var(--terra))}
+.fly-img{width:100%;height:170px;object-fit:cover;margin-bottom:22px;border:1px solid rgba(200,146,42,.18)}
+.fly-title{font-family:'Cinzel',serif;font-size:32px;font-weight:800;color:var(--gold);letter-spacing:5px;text-align:center;margin-bottom:2px}
+.fly-sub{font-style:italic;font-size:18px;color:var(--cream);text-align:center;margin-bottom:24px}
+.fd{display:flex;align-items:flex-start;gap:11px;padding:9px 13px;background:rgba(245,237,216,.04);border-left:2px solid var(--gold);margin-bottom:7px}
+.fdi{font-size:14px;flex-shrink:0;margin-top:2px}
+.fdl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.fdv{font-size:12.5px;color:var(--cream);margin-top:2px}
+.fly-em{text-align:center;margin-top:20px;padding-top:16px;border-top:1px solid rgba(200,146,42,.13)}
+.fly-em-l{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,146,42,.52);margin-bottom:5px}
+.fly-em a{font-family:'Cinzel',serif;font-size:12.5px;color:var(--gold);text-decoration:none}
+#companeros{background:var(--cream2)}
+.partners{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
+.prt{background:#fff;border:1px solid rgba(200,146,42,.12);padding:18px 24px;min-width:140px;text-align:center;transition:all .25s;display:flex;align-items:center;justify-content:center;min-height:72px}
+.prt:hover{border-color:var(--gold);box-shadow:0 4px 18px rgba(200,146,42,.13);transform:translateY(-2px)}
+.prt-img{max-width:120px;max-height:50px;object-fit:contain}
+.prt-name{font-family:'Cinzel',serif;font-size:11.5px;color:var(--earth);line-height:1.4}
+#contacto{background:var(--earth)}
+.cg2{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.c-info{display:flex;flex-direction:column;gap:14px}
+.ci{display:flex;gap:13px;align-items:flex-start;padding:16px;background:rgba(245,237,216,.04);border:1px solid rgba(200,146,42,.12)}
+.ci-icon{font-size:19px;width:38px;height:38px;background:rgba(200,146,42,.09);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ci-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.ci-val{font-size:13.5px;color:var(--cream)}
+.socials{display:flex;gap:9px;margin-top:18px}
+.soc{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(200,146,42,.26);color:var(--gold);text-decoration:none;font-size:17px;transition:all .2s}
+.soc:hover{background:var(--gold);color:var(--earth)}
+.c-form{display:flex;flex-direction:column;gap:13px}
+.c-form .finp,.c-form .fta{background:rgba(245,237,216,.05);border:1px solid rgba(200,146,42,.18);color:var(--cream)}
+.c-form .finp::placeholder,.c-form .fta::placeholder{color:rgba(245,237,216,.26)}
+.c-form .finp:focus,.c-form .fta:focus{border-color:var(--gold)}
+.c-form .flbl{color:rgba(200,146,42,.78)}
+footer{background:var(--earth3);padding:52px 24px 22px}
+.fi-inner{max-width:1240px;margin:0 auto}
+.ftop{display:grid;grid-template-columns:260px 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.fbname{font-family:'Cinzel',serif;font-size:16px;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:2px}
+.fbsub{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(200,146,42,.42);margin-bottom:12px}
+.fbdesc{font-size:12px;line-height:1.8;color:rgba(245,237,216,.35)}
+.fc-title{font-family:'Cinzel',serif;font-size:9.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.flinks{display:flex;flex-direction:column;gap:8px}
+.flinks a{font-size:12px;color:rgba(245,237,216,.38);text-decoration:none;letter-spacing:.5px;transition:color .2s}
+.flinks a:hover{color:var(--gold)}
+.fbot{padding-top:20px;border-top:1px solid rgba(200,146,42,.09);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.fcopy{font-size:11px;color:rgba(245,237,216,.22);letter-spacing:1px}
+.flove{font-size:11px;color:rgba(200,146,42,.32);letter-spacing:1px}
+.fi-anim{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.fi-anim.vis{opacity:1;transform:none}
+.fi-anim.d1{transition-delay:.1s}.fi-anim.d2{transition-delay:.2s}.fi-anim.d3{transition-delay:.3s}
+.admin-btn{position:fixed;bottom:20px;left:20px;z-index:500;font-family:'Cinzel',serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;background:var(--earth);color:var(--gold);border:1px solid rgba(200,146,42,.26);padding:8px 13px;cursor:pointer;opacity:.52;transition:all .2s}
+.admin-btn:hover{opacity:1;border-color:var(--gold)}
+#ap{display:none;position:fixed;inset:0;z-index:9000;background:rgba(26,16,5,.97);backdrop-filter:blur(10px);overflow-y:auto}
+#ap.open{display:block}
+.ap-inner{max-width:860px;margin:0 auto;padding:34px 22px}
+.ap-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;padding-bottom:18px;border-bottom:1px solid rgba(200,146,42,.16)}
+.ap-title{font-family:'Cinzel',serif;font-size:20px;font-weight:800;color:var(--gold);letter-spacing:3px}
+.ap-x{width:40px;height:40px;background:rgba(181,68,27,.16);border:1px solid rgba(181,68,27,.35);color:#B5441B;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.ap-x:hover{background:#B5441B;color:#fff}
+.ap-tabs{display:flex;margin-bottom:26px;border-bottom:1px solid rgba(200,146,42,.1)}
+.atab{font-family:'Cinzel',serif;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:10px 16px;cursor:pointer;border:none;background:transparent;color:rgba(200,146,42,.42);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+.atab:hover{color:var(--gold)}.atab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.asec{display:none}.asec.active{display:block}
+.asec h3{font-family:'Cinzel',serif;font-size:15px;color:var(--cream);margin-bottom:20px;padding-bottom:9px;border-bottom:1px solid rgba(200,146,42,.09)}
+.aform{display:flex;flex-direction:column;gap:14px}
+.aform .flbl{color:rgba(200,146,42,.78)}
+.aform .finp,.aform .fta,.aform .fsel{background:rgba(245,237,216,.05);border:1px solid rgba(200,146,42,.16);color:var(--cream)}
+.aform .finp::placeholder,.aform .fta::placeholder{color:rgba(245,237,216,.26)}
+.aform .fsel option{background:var(--earth)}
+.alist{display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
+.aitem{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;background:rgba(245,237,216,.04);border:1px solid rgba(200,146,42,.11)}
+.ai-title{font-family:'Cinzel',serif;font-size:12.5px;color:var(--cream)}
+.ai-meta{font-size:10px;color:rgba(200,146,42,.52);margin-top:2px;letter-spacing:1px}
+.btn-dl{font-size:10.5px;padding:5px 11px;border:1px solid #B5441B;color:#B5441B;background:transparent;cursor:pointer;font-family:'Cinzel',serif;font-weight:600;letter-spacing:1px;transition:all .2s}
+.btn-dl:hover{background:#B5441B;color:#fff}
+.a-login{max-width:330px;margin:44px auto;text-align:center}
+.alt{font-family:'Cinzel',serif;font-size:17px;color:var(--gold);letter-spacing:3px;margin-bottom:5px}
+.als{font-size:11.5px;color:rgba(245,237,216,.4);margin-bottom:22px}
+.btn-login{font-family:'Cinzel',serif;font-size:11.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;background:var(--gold);color:var(--earth);border:none;padding:13px 26px;cursor:pointer;width:100%;transition:all .2s}
+.btn-login:hover{background:var(--gold-lt)}
+.lerr{color:#e74c3c;font-size:11.5px;margin-top:7px;display:none}
+.notif{position:fixed;bottom:20px;right:20px;background:#1B3A2A;border:1px solid var(--gold);padding:13px 20px;font-size:12.5px;color:var(--cream);z-index:9999;transform:translateY(65px);opacity:0;transition:all .3s}
+.notif.show{transform:none;opacity:1}
+@media(max-width:980px){
+  .h-wrap,.m-grid,.cl-grid,.cg2,.cg,.bib-grid2{grid-template-columns:1fr}
+  .hcard{display:none}
+  .gg{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gi:nth-child(1){grid-column:span 2;grid-row:span 1}
+  .ftop{grid-template-columns:1fr 1fr;gap:26px}
+}
+@media(max-width:680px){
+  .nav-links,.langs{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:62px;left:0;right:0;background:var(--earth);padding:12px;z-index:999;box-shadow:0 8px 22px rgba(0,0,0,.4)}
+  .ham{display:flex}
+  .frow,.vals{grid-template-columns:1fr}
+  .gg{grid-template-columns:1fr}
+  .gi:nth-child(1){grid-column:span 1}
+  .ftop{grid-template-columns:1fr}
+  .bib-tabs{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-gem">
+        <div class="lg-c"></div><div class="lg-c"></div><div class="lg-c"></div><div class="lg-c"></div>
+        <div class="lg-c"></div><div class="lg-c"></div><div class="lg-c"></div><div class="lg-c"></div>
+        <div class="lg-c"></div><div class="lg-c"></div><div class="lg-c"></div><div class="lg-c"></div>
+        <div class="lg-c"></div><div class="lg-c"></div><div class="lg-c"></div><div class="lg-c"></div>
+      </div>
+      <div><div class="lt1" data-i18n="logo">RIMANAKUY</div><div class="lt2" data-i18n="logo-sub">Comunidad Andina &middot; Londres</div></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="active" data-i18n="n-home">Inicio</a></li>
+      <li><a href="#mision" data-i18n="n-mision">Misi&oacute;n</a></li>
+      <li><a href="#noticias" data-i18n="n-news">Noticias</a></li>
+      <li><a href="#galeria" data-i18n="n-gal">Galer&iacute;a</a></li>
+      <li><a href="#biblioteca" data-i18n="n-bib">Biblioteca</a></li>
+      <li><a href="#clases" data-i18n="n-clases">Clases</a></li>
+      <li><a href="#companeros" data-i18n="n-comp">Compa&ntilde;eros</a></li>
+      <li><a href="#contacto" data-i18n="n-contact">Contacto</a></li>
+    </ul>
+    <div style="display:flex;gap:9px;align-items:center">
+      <div class="langs" id="langSw">
+        <button class="lbtn active" onclick="setLang('es',this)">ES</button>
+        <button class="lbtn" onclick="setLang('qu',this)">QU</button>
+        <button class="lbtn" onclick="setLang('en',this)">EN</button>
+      </div>
+      <div class="ham" id="ham"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg"></div>
+  <div class="h-stripe stripe"></div>
+  <div class="h-wrap">
+    <div>
+      <div class="h-eyebrow"><div class="h-eline"></div><span data-i18n="h-eyebrow">Fundada en 2019 &middot; Londres, Reino Unido</span></div>
+      <h1 class="h-title">Comunidad<span class="acc">Rimanakuy</span></h1>
+      <p class="h-qu" data-i18n="h-qu">Rimay = hablar &middot; Nakuy = juntos</p>
+      <p class="h-desc" data-i18n="h-desc">Asociaci&oacute;n cultural sin fines de lucro dedicada a conservar, promover y disfrutar el idioma quechua y la rica cultura andina entre la comunidad latinoamericana en el Reino Unido.</p>
+      <div class="cta-row">
+        <a href="#clases" class="btn btn-g" data-i18n="h-cta1">Clases de Quechua</a>
+        <a href="#mision" class="btn btn-o" data-i18n="h-cta2">Nuestra Misi&oacute;n</a>
+      </div>
+      <div class="h-stats">
+        <div><span class="snum">2019</span><span class="slbl" data-i18n="s1">Fundaci&oacute;n</span></div>
+        <div><span class="snum">3</span><span class="slbl" data-i18n="s2">Idiomas</span></div>
+        <div><span class="snum">+50</span><span class="slbl" data-i18n="s3">Eventos</span></div>
+        <div><span class="snum">&infin;</span><span class="slbl" data-i18n="s4">Cultura viva</span></div>
+      </div>
+    </div>
+    <div class="hcard">
+      <div class="c-lbl" data-i18n="c-lbl">Pr&oacute;ximos eventos</div>
+      <div id="heroEvs">
+        <div class="ev-item"><div class="ev-date">&#9728;&#65039; 21 Jun 2025 &middot; 12&ndash;20h</div><div class="ev-name">Inti Raymi &ndash; Fiesta del Sol</div><div class="ev-loc">&#128205; 1 Opal St, London SE11</div></div>
+        <div class="ev-item"><div class="ev-date">&#128218; 9 Jul 2025 &middot; 19&ndash;20h</div><div class="ev-name">Clases de Quechua B&aacute;sico</div><div class="ev-loc">&#128205; 11 Scovell Road, SE1</div></div>
+        <div class="ev-item"><div class="ev-date">&#127760; Continuo</div><div class="ev-name">Biblioteca Virtual Quechua</div><div class="ev-loc">&#128279; Acceso online gratuito</div></div>
+      </div>
+      <div style="margin-top:20px"><a href="#noticias" class="btn btn-g" style="display:block;text-align:center;font-size:10px" data-i18n="ver-evs">Ver todos los eventos &rarr;</a></div>
+    </div>
+  </div>
+</section>
+<!-- MISION -->
+<section id="mision">
+  <div class="stripe-sm"></div>
+  <div class="sw on-dark">
+    <div class="m-grid">
+      <div class="fi-anim">
+        <div class="eyebrow"><span data-i18n="m-eyebrow">Qui&eacute;nes somos</span><div class="eline" style="background:linear-gradient(90deg,rgba(200,146,42,.45),transparent)"></div></div>
+        <h2 class="sec-title" style="color:var(--cream)">Nuestra <span class="g" data-i18n="m-title">Misi&oacute;n</span></h2>
+        <p class="sec-lead" data-i18n="m-lead">Un grupo comunitario sin fines de lucro dedicado a preservar las lenguas ancestrales latinoamericanas y actuar como red de apoyo cultural.</p>
+        <div class="principles">
+          <div class="pr"><div class="pri">&#127807;</div><div class="prt" data-i18n="p1">Promover, difundir y preservar las <strong>lenguas ancestrales latinoamericanas</strong>: quechua, aimara, mapuche, n&aacute;huatl, guaran&iacute; y m&aacute;s.</div></div>
+          <div class="pr"><div class="pri">&#128218;</div><div class="prt" data-i18n="p2">Asistir en la <strong>alfabetizaci&oacute;n de comunidades nativas</strong> y preservar su patrimonio escrito.</div></div>
+          <div class="pr"><div class="pri">&#129309;</div><div class="prt" data-i18n="p3">Ser <strong>punto de referencia y red de apoyo</strong> para la integraci&oacute;n cultural de hablantes de lenguas originarias.</div></div>
+          <div class="pr"><div class="pri">&#9878;&#65039;</div><div class="prt" data-i18n="p4">Proporcionar orientaci&oacute;n en <strong>derechos laborales, inmigraci&oacute;n y nacionalidad</strong>.</div></div>
+        </div>
+      </div>
+      <div class="fi-anim d2">
+        <div class="eyebrow" style="margin-bottom:13px"><span data-i18n="v-eyebrow">Valores Andinos</span><div class="eline" style="background:linear-gradient(90deg,rgba(200,146,42,.45),transparent)"></div></div>
+        <div class="vals">
+          <div class="vc"><div class="vq">Ayni</div><div class="ves" data-i18n="v1es">Reciprocidad</div><div class="vd" data-i18n="v1">Asistencia mutua entre los miembros de la comunidad.</div></div>
+          <div class="vc"><div class="vq">Minka</div><div class="ves" data-i18n="v2es">Trabajo Comunal</div><div class="vd" data-i18n="v2">Ayuda colectiva hacia un objetivo com&uacute;n.</div></div>
+          <div class="vc"><div class="vq">Munayki</div><div class="ves" data-i18n="v3es">Unidad</div><div class="vd" data-i18n="v3">Avanzando juntos a pesar de nuestras diferencias.</div></div>
+          <div class="vc"><div class="vq">Pachamama</div><div class="ves" data-i18n="v4es">Madre Tierra</div><div class="vd" data-i18n="v4">Sumaq kawsay &mdash; la buena vida en armon&iacute;a con la naturaleza.</div></div>
+        </div>
+        <div class="ama"><div class="ama-t">AMA LLULLA &middot; AMA QUELLA &middot; AMA SUWA</div><div class="ama-s" data-i18n="ama-s">No mint&aacute;is &middot; No robes &middot; No seas flojo &mdash; Los tres principios ancestrales andinos</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="stripe-sm"></div>
+</section>
+
+<!-- NOTICIAS -->
+<section id="noticias">
+  <div class="sw">
+    <div class="eyebrow fi-anim"><span data-i18n="news-eyebrow">Noticias y Eventos</span><div class="eline"></div></div>
+    <h2 class="sec-title fi-anim" data-i18n="news-title">&#218;ltimas <span class="g">Noticias</span></h2>
+    <p class="sec-lead fi-anim" data-i18n="news-lead">Eventos culturales, clases y actividades de nuestra comunidad andina en Londres.</p>
+    <div class="ng" id="newsGrid">
+      <div class="nc fi-anim">
+        <img class="nc-img" src="peru2.jpg" alt="Inti Raymi" onerror="this.outerHTML='<div class=\'nc-ph\'><span class=\'nc-phi\'>&#9728;&#65039;</span></div>'">
+        <div class="nc-body"><span class="nc-tag" data-i18n="tag-ev">Evento Cultural</span><h3 class="nc-title" data-i18n="n1-t">Inti Raymi &ndash; Fiesta del Sol 2025</h3><p class="nc-exc" data-i18n="n1-e">Celebraci&oacute;n del solsticio de verano con baile, m&uacute;sica, danza, arte y gastronom&iacute;a peruana. Ceviche, pisco sour y cultura andina en Londres.</p><div class="nc-foot"><span class="nc-date">21 Jun 2025</span><a href="#" class="nc-link" data-i18n="ver-mas">Ver m&aacute;s &rarr;</a></div></div>
+      </div>
+      <div class="nc fi-anim d1">
+        <img class="nc-img" src="peru1.jpg" alt="Clases Quechua" onerror="this.outerHTML='<div class=\'nc-ph\'><span class=\'nc-phi\'>&#128218;</span></div>'">
+        <div class="nc-body"><span class="nc-tag" data-i18n="tag-edu">Educaci&oacute;n</span><h3 class="nc-title" data-i18n="n2-t">Clases de Quechua B&aacute;sico &ndash; Julio 2025</h3><p class="nc-exc" data-i18n="n2-e">Nuevo ciclo de 4 clases. Mi&eacute;rcoles 9 de julio, 7:00&ndash;8:00 PM. Elephant and Castle. Donaci&oacute;n solidaria &pound;5.</p><div class="nc-foot"><span class="nc-date">9 Jul 2025</span><a href="#clases" class="nc-link" data-i18n="ver-mas">Ver m&aacute;s &rarr;</a></div></div>
+      </div>
+      <div class="nc fi-anim d2">
+        <img class="nc-img" src="peru3.jpg" alt="Danza andina" style="object-position:top" onerror="this.outerHTML='<div class=\'nc-ph\'><span class=\'nc-phi\'>&#128131;</span></div>'">
+        <div class="nc-body"><span class="nc-tag" data-i18n="tag-cult">Cultura</span><h3 class="nc-title" data-i18n="n3-t">Danza y M&uacute;sica Andina en Londres</h3><p class="nc-exc" data-i18n="n3-e">Nuestros eventos celebran la riqueza de la danza y m&uacute;sica andina, conectando a la comunidad peruana con sus ra&iacute;ces.</p><div class="nc-foot"><span class="nc-date" data-i18n="ongoing">Continuo</span><a href="#" class="nc-link" data-i18n="ver-mas">Ver m&aacute;s &rarr;</a></div></div>
+      </div>
+      <div class="nc fi-anim">
+        <img class="nc-img" src="peru6.jpg" alt="Comunidad" onerror="this.outerHTML='<div class=\'nc-ph\'><span class=\'nc-phi\'>&#127881;</span></div>'">
+        <div class="nc-body"><span class="nc-tag" data-i18n="tag-com">Comunidad</span><h3 class="nc-title" data-i18n="n4-t">Encuentros en Latin American House</h3><p class="nc-exc" data-i18n="n4-e">Reuniones peri&oacute;dicas con m&uacute;sica, baile y gastronom&iacute;a peruana donde compartimos nuestra cultura con toda la comunidad londinense.</p><div class="nc-foot"><span class="nc-date" data-i18n="monthly">Mensual</span><a href="#" class="nc-link" data-i18n="ver-mas">Ver m&aacute;s &rarr;</a></div></div>
+      </div>
+      <div class="nc fi-anim d1">
+        <img class="nc-img" src="peru4.jpg" alt="Biblioteca" onerror="this.outerHTML='<div class=\'nc-ph\'><span class=\'nc-phi\'>&#128214;</span></div>'">
+        <div class="nc-body"><span class="nc-tag" data-i18n="tag-bib">Biblioteca</span><h3 class="nc-title" data-i18n="n5-t">Biblioteca Virtual Quechua en Expansi&oacute;n</h3><p class="nc-exc" data-i18n="n5-e">Nuevos documentos, manuscritos y recursos digitales a&ntilde;adidos a nuestra colecci&oacute;n especializada en lengua y cultura quechua.</p><div class="nc-foot"><span class="nc-date" data-i18n="ongoing">Continuo</span><a href="#biblioteca" class="nc-link" data-i18n="explorar">Explorar &rarr;</a></div></div>
+      </div>
+      <div class="nc fi-anim d2">
+        <div class="nc-ph"><span class="nc-phi">&#127925;</span></div>
+        <div class="nc-body"><span class="nc-tag" data-i18n="tag-pod">Podcast</span><h3 class="nc-title" data-i18n="n6-t">Nuevos Episodios en Spotify</h3><p class="nc-exc" data-i18n="n6-e">Escucha nuestros podcasts sobre cultura andina, historia quechua e historias de nuestra comunidad en Spotify y YouTube.</p><div class="nc-foot"><span class="nc-date" data-i18n="ongoing">Continuo</span><a href="https://open.spotify.com/show/0Bii1g36PPSETZw2SaXJgD" target="_blank" class="nc-link" data-i18n="escuchar">Escuchar &rarr;</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="stripe-sm"></div>
+  <div class="sw on-dark" style="padding-bottom:32px">
+    <div class="eyebrow fi-anim"><span data-i18n="g-eyebrow">Momentos</span><div class="eline" style="background:linear-gradient(90deg,rgba(200,146,42,.45),transparent)"></div></div>
+    <h2 class="sec-title fi-anim" style="color:var(--cream);margin-bottom:32px">Nuestra <span class="g" data-i18n="g-title">Galer&iacute;a</span></h2>
+  </div>
+  <div class="g-wrap">
+    <div class="gg">
+      <div class="gi fi-anim" onclick="openLb('peru6.jpg')"><img src="peru6.jpg" alt="Evento comunidad"></div>
+      <div class="gi fi-anim d1" onclick="openLb('peru3.jpg')"><img src="peru3.jpg" alt="Danza andina" style="object-position:top"></div>
+      <div class="gi fi-anim d2" onclick="openLb('peru5.jpg')"><img src="peru5.jpg" alt="Machu Picchu"></div>
+      <div class="gi fi-anim d1" onclick="openLb('peru4.jpg')"><img src="peru4.jpg" alt="Libro hist&oacute;rico"></div>
+      <div class="gi fi-anim d2" onclick="openLb('peru2.jpg')"><img src="peru2.jpg" alt="Inti Raymi"></div>
+    </div>
+  </div>
+  <div class="stripe-sm" style="margin-top:0"></div>
+</section>
+<div class="lb-overlay" id="lb" onclick="closeLb()">
+  <button class="lb-x" onclick="closeLb()">&#10005;</button>
+  <img id="lb-img" src="" alt="" class="lb-img">
+</div>
+<!-- BIBLIOTECA -->
+<section id="biblioteca">
+  <div class="sw">
+    <div class="eyebrow fi-anim"><span data-i18n="b-eyebrow">Conocimiento Ancestral</span><div class="eline"></div></div>
+    <h2 class="sec-title fi-anim" data-i18n="b-main-title">Biblioteca <span class="g">Virtual</span></h2>
+    <p class="sec-lead fi-anim" data-i18n="b-lead">Cat&aacute;logo especializado de documentos en quechua o sobre la lengua y las culturas andinas. Tambi&eacute;n acoge obras in&eacute;ditas sobre cualquier variante de la familia ling&uuml;&iacute;stica quechua.</p>
+    <div class="bib-tabs fi-anim">
+      <button class="btab active" onclick="showBib('cat',this)" data-i18n="b-tab1">&#128218; Cat&aacute;logo</button>
+      <button class="btab" onclick="showBib('docs',this)" data-i18n="b-tab2">&#128196; Documentos</button>
+      <button class="btab" onclick="showBib('audio',this)" data-i18n="b-tab3">&#127911; Archivo de Audio</button>
+      <button class="btab" onclick="showBib('contrib',this)" data-i18n="b-tab4">&#9997;&#65039; Contribuir</button>
+    </div>
+
+    <!-- CATALOGO -->
+    <div class="bsec active" id="bib-cat">
+      <div class="bib-grid2">
+        <div>
+          <h3 style="font-family:'Cinzel',serif;font-size:19px;color:var(--earth);margin-bottom:14px" data-i18n="bc-title">Explora Nuestra Colecci&oacute;n</h3>
+          <p style="font-size:14.5px;line-height:1.88;color:var(--text-lt);margin-bottom:18px" data-i18n="bc-desc">La Biblioteca Virtual es un repositorio especializado de documentos publicados en quechua o sobre el idioma y las culturas andinas. Tambi&eacute;n es una biblioteca de obras in&eacute;ditas en o sobre cualquiera de las variantes de la familia ling&uuml;&iacute;stica quechua.</p>
+          <p style="font-size:13.5px;line-height:1.8;color:var(--text-lt);margin-bottom:26px" data-i18n="bc-desc2">Si ha escrito o est&aacute; escribiendo un documento sobre quechua o culturas andinas, considere depositar una copia en esta biblioteca para preservar y difundir el conocimiento ancestral.</p>
+          <div class="bib-links">
+            <a href="https://comunidadrimanakuy.org/biblioteca-quechua/" target="_blank" class="bl"><div class="bl-icon">&#128218;</div><div><div class="bl-title" data-i18n="bl1t">Documentos en Quechua</div><div class="bl-sub" data-i18n="bl1s">Textos escritos en lengua quechua</div></div></a>
+            <a href="https://comunidadrimanakuy.org/biblioteca-quechua/" target="_blank" class="bl"><div class="bl-icon">&#128300;</div><div><div class="bl-title" data-i18n="bl2t">Estudios Ling&uuml;&iacute;sticos</div><div class="bl-sub" data-i18n="bl2s">Investigaciones sobre la lengua quechua</div></div></a>
+            <a href="https://comunidadrimanakuy.org/biblioteca-quechua/" target="_blank" class="bl"><div class="bl-icon">&#127912;</div><div><div class="bl-title" data-i18n="bl3t">Cultura y Arte Andino</div><div class="bl-sub" data-i18n="bl3s">Recursos culturales e hist&oacute;ricos</div></div></a>
+            <a href="https://comunidadrimanakuy.org/biblioteca-quechua/" target="_blank" class="bl"><div class="bl-icon">&#128220;</div><div><div class="bl-title" data-i18n="bl4t">Manuscritos Hist&oacute;ricos</div><div class="bl-sub" data-i18n="bl4s">Documentos coloniales y precolombinos</div></div></a>
+          </div>
+        </div>
+        <div>
+          <img src="peru4.jpg" alt="Libro quechua" class="bib-img" onerror="this.style.display='none'">
+          <div class="dato"><div class="dato-t" data-i18n="dato-t">DATO CULTURAL</div><div class="dato-d" data-i18n="dato-d">El quechua es hablado por aprox. 8&ndash;10 millones de personas en Sudam&eacute;rica. Fue la lengua del Imperio Inca y sigue viva en Per&uacute;, Bolivia, Ecuador y m&aacute;s pa&iacute;ses.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOCUMENTOS -->
+    <div class="bsec" id="bib-docs">
+      <h3 style="font-family:'Cinzel',serif;font-size:19px;color:var(--earth);margin-bottom:26px" data-i18n="docs-title">Documentos Destacados</h3>
+      <div class="docs-grid" id="docsGrid">
+        <div class="dc"><div class="dc-type" data-i18n="dt-ms">Manuscrito</div><div class="dc-title" data-i18n="d1t">Nueva cor&oacute;nica y buen gobierno</div><div class="dc-meta" data-i18n="d1m">Felipe Guam&aacute;n Poma de Ayala &middot; c. 1615<br>Cr&oacute;nica ilustrada en quechua y espa&ntilde;ol.</div><a href="#" class="dc-cta" data-i18n="d-ver">Ver documento &rarr;</a></div>
+        <div class="dc"><div class="dc-type" data-i18n="dt-lin">Ling&uuml;&iacute;stica</div><div class="dc-title" data-i18n="d2t">Gram&aacute;tica del Quechua Cuzque&ntilde;o</div><div class="dc-meta" data-i18n="d2m">Estudio acad&eacute;mico sobre la variante m&aacute;s extendida del quechua. Fonolog&iacute;a, morfolog&iacute;a y sintaxis.</div><a href="#" class="dc-cta" data-i18n="d-ver">Ver documento &rarr;</a></div>
+        <div class="dc"><div class="dc-type" data-i18n="dt-oral">Literatura Oral</div><div class="dc-title" data-i18n="d3t">Huarochir&iacute; &ndash; Mitos Andinos</div><div class="dc-meta" data-i18n="d3m">Manuscrito de Huarochir&iacute;, siglo XVII. Mitos y leyendas andinas en quechua.</div><a href="#" class="dc-cta" data-i18n="d-ver">Ver documento &rarr;</a></div>
+        <div class="dc"><div class="dc-type" data-i18n="dt-dic">Diccionario</div><div class="dc-title" data-i18n="d4t">Vocabulario Quechua-Espa&ntilde;ol-Ingl&eacute;s</div><div class="dc-meta" data-i18n="d4m">Diccionario tril&iacute;ng&uuml;e para facilitar el aprendizaje del quechua moderno.</div><a href="#" class="dc-cta" data-i18n="d-ver">Ver documento &rarr;</a></div>
+        <div class="dc"><div class="dc-type" data-i18n="dt-hist">Historia</div><div class="dc-title" data-i18n="d5t">Comentarios Reales de los Incas</div><div class="dc-meta" data-i18n="d5m">An&aacute;lisis de la obra cumbre del Inca Garcilaso de la Vega, cima del mestizaje cultural.</div><a href="#" class="dc-cta" data-i18n="d-ver">Ver documento &rarr;</a></div>
+        <div class="dc"><div class="dc-type" data-i18n="dt-poe">Poes&iacute;a</div><div class="dc-title" data-i18n="d6t">Harawi &ndash; Poes&iacute;a L&iacute;rica Quechua</div><div class="dc-meta" data-i18n="d6m">Antolog&iacute;a de harawi, la forma po&eacute;tica m&aacute;s caracter&iacute;stica de la tradici&oacute;n oral andina.</div><a href="#" class="dc-cta" data-i18n="d-ver">Ver documento &rarr;</a></div>
+      </div>
+    </div>
+
+    <!-- AUDIO -->
+    <div class="bsec" id="bib-audio">
+      <h3 style="font-family:'Cinzel',serif;font-size:19px;color:var(--earth);margin-bottom:10px" data-i18n="au-title">Archivo de Audio</h3>
+      <p style="font-size:13.5px;line-height:1.8;color:var(--text-lt);margin-bottom:28px" data-i18n="au-desc">Grabaciones de pronunciaci&oacute;n quechua, canciones tradicionales andinas, podcasts y recursos auditivos para el aprendizaje de la lengua.</p>
+      <div class="ag">
+        <div class="ac"><div class="a-tag t-pron" data-i18n="au-tag-pron">Pronunciaci&oacute;n</div><div class="a-title" data-i18n="au1t">Fon&eacute;tica Quechua B&aacute;sica</div><div class="a-desc" data-i18n="au1d">Gu&iacute;a de pronunciaci&oacute;n de los sonidos del quechua cuzque&ntilde;o, incluyendo consonantes aspiradas y glotalizadas.</div><audio controls class="audio-pl"><source src="#" type="audio/mpeg"></audio><p style="font-size:10.5px;color:var(--text-lt);margin-top:6px" data-i18n="au-na">Disponible en Spotify y YouTube</p></div>
+        <div class="ac"><div class="a-tag t-mus" data-i18n="au-tag-mus">M&uacute;sica Tradicional</div><div class="a-title" data-i18n="au2t">Huayno &ndash; M&uacute;sica Andina</div><div class="a-desc" data-i18n="au2d">Selecci&oacute;n de huaynos tradicionales del altiplano andino. M&uacute;sica que ha acompa&ntilde;ado a las comunidades quechuahablantes por siglos.</div><audio controls class="audio-pl"><source src="#" type="audio/mpeg"></audio><p style="font-size:10.5px;color:var(--text-lt);margin-top:6px" data-i18n="au-na">Disponible en Spotify y YouTube</p></div>
+        <div class="ac"><div class="a-tag t-pod" data-i18n="au-tag-pod">Podcast</div><div class="a-title" data-i18n="au3t">Comunidad Rimanakuy en Spotify</div><div class="a-desc" data-i18n="au3d">Episodios sobre cultura andina, historia del quechua, entrevistas con miembros de la comunidad y mucho m&aacute;s.</div><a href="https://open.spotify.com/show/0Bii1g36PPSETZw2SaXJgD" target="_blank" class="btn btn-g" style="margin-top:12px;display:inline-block;font-size:10px" data-i18n="au-spot">Abrir en Spotify &rarr;</a></div>
+        <div class="ac"><div class="a-tag t-rit" data-i18n="au-tag-rit">Canto Ritual</div><div class="a-title" data-i18n="au4t">Cantos del Inti Raymi</div><div class="a-desc" data-i18n="au4d">Grabaciones de los cantos ceremoniales de la Fiesta del Sol, una de las celebraciones m&aacute;s importantes del calendario andino.</div><a href="https://www.youtube.com/@comunidadrimanakuy8173" target="_blank" class="btn btn-o" style="margin-top:12px;display:inline-block;font-size:10px;padding:9px 18px" data-i18n="au-yt">Ver en YouTube &rarr;</a></div>
+        <div class="ac"><div class="a-tag t-lrn" data-i18n="au-tag-lrn">Para Aprender</div><div class="a-title" data-i18n="au5t">Di&aacute;logos B&aacute;sicos en Quechua</div><div class="a-desc" data-i18n="au5d">Di&aacute;logos cotidianos en quechua cuzque&ntilde;o con traducci&oacute;n al espa&ntilde;ol. Material de apoyo para estudiantes de nuestras clases.</div><audio controls class="audio-pl"><source src="#" type="audio/mpeg"></audio><p style="font-size:10.5px;color:var(--text-lt);margin-top:6px" data-i18n="au-na">Disponible en Spotify y YouTube</p></div>
+        <div class="ac"><div class="a-tag t-cnt" data-i18n="au-tag-cnt">Cuentos</div><div class="a-title" data-i18n="au6t">Cuentos Andinos &ndash; Tradici&oacute;n Oral</div><div class="a-desc" data-i18n="au6d">Leyendas y cuentos de la tradici&oacute;n oral quechua, narrados en quechua con subt&iacute;tulos en espa&ntilde;ol.</div><audio controls class="audio-pl"><source src="#" type="audio/mpeg"></audio><p style="font-size:10.5px;color:var(--text-lt);margin-top:6px" data-i18n="au-na">Disponible en Spotify y YouTube</p></div>
+      </div>
+    </div>
+
+    <!-- CONTRIBUIR -->
+    <div class="bsec" id="bib-contrib">
+      <div class="cg">
+        <div>
+          <h3 style="font-family:'Cinzel',serif;font-size:19px;color:var(--earth);margin-bottom:14px" data-i18n="co-title">Contribuye a la Biblioteca</h3>
+          <p style="font-size:13.5px;line-height:1.8;color:var(--text-lt);margin-bottom:24px" data-i18n="co-desc">&iquest;Has escrito un documento sobre quechua o culturas andinas? Comparte tu trabajo con nuestra comunidad global y ayuda a preservar el conocimiento ancestral.</p>
+          <div class="cs-steps">
+            <div class="cst"><div class="csn">1</div><div class="csd" data-i18n="cs1">Completa el formulario con los <strong>datos de tu documento</strong>: t&iacute;tulo, autor, tipo, a&ntilde;o e idioma.</div></div>
+            <div class="cst"><div class="csn">2</div><div class="csd" data-i18n="cs2">Adjunta el archivo en formato <strong>PDF, DOCX o enlace externo</strong> a tu documento.</div></div>
+            <div class="cst"><div class="csn">3</div><div class="csd" data-i18n="cs3">Nuestro equipo <strong>revisar&aacute; y publicar&aacute;</strong> tu contribuci&oacute;n con la atribuci&oacute;n correspondiente.</div></div>
+          </div>
+          <div class="c-tipos"><div class="c-tipos-t" data-i18n="co-tipos-t">TIPOS ACEPTADOS</div><div class="c-tipos-d" data-i18n="co-tipos">Estudios ling&uuml;&iacute;sticos &middot; Gram&aacute;ticas &middot; Diccionarios &middot; Literatura oral &middot; Poes&iacute;a quechua &middot; Historia andina &middot; Arte y cultura &middot; Manuscritos digitalizados &middot; Tesis acad&eacute;micas</div></div>
+        </div>
+        <div class="cform">
+          <div><div class="flbl" data-i18n="cf-tit">T&iacute;tulo del documento *</div><input type="text" class="finp" placeholder="T&iacute;tulo completo"></div>
+          <div><div class="flbl" data-i18n="cf-aut">Autor(es) *</div><input type="text" class="finp" placeholder="Nombre del autor"></div>
+          <div class="frow">
+            <div><div class="flbl" data-i18n="cf-tipo">Tipo</div><select class="fsel"><option>Ling&uuml;&iacute;stica</option><option>Literatura</option><option>Historia</option><option>Cultura</option><option>Poes&iacute;a</option><option>Otro</option></select></div>
+            <div><div class="flbl" data-i18n="cf-idioma">Idioma</div><select class="fsel"><option>Quechua</option><option>Espa&ntilde;ol</option><option>English</option><option>Biling&uuml;e</option></select></div>
+          </div>
+          <div><div class="flbl" data-i18n="cf-desc">Descripci&oacute;n breve</div><textarea class="fta" rows="3" placeholder="Describe el contenido..."></textarea></div>
+          <div><div class="flbl" data-i18n="cf-ema">Tu email *</div><input type="email" class="finp" placeholder="para contactarte"></div>
+          <button class="btn btn-g" style="width:100%;text-align:center" onclick="showNotif('&checkmark; Contribuci&oacute;n enviada. &iexcl;Gracias!')" data-i18n="cf-sub">Enviar Contribuci&oacute;n &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- CLASES -->
+<section id="clases">
+  <div class="stripe-sm"></div>
+  <div class="sw on-dark">
+    <div class="cl-grid">
+      <div class="fi-anim">
+        <div class="eyebrow" style="margin-bottom:13px"><span data-i18n="cl-eyebrow">Aprende Quechua</span><div class="eline" style="background:linear-gradient(90deg,rgba(200,146,42,.45),transparent)"></div></div>
+        <h2 class="sec-title" style="color:var(--cream)">Clases de <span class="g" data-i18n="cl-title">Quechua</span></h2>
+        <p class="sec-lead" data-i18n="cl-lead">Aprende la lengua de los Incas con nuestra comunidad. Clases accesibles para todos los niveles, impartidas con pasi&oacute;n por preservar este idioma ancestral.</p>
+        <p style="font-size:13.5px;line-height:1.85;color:rgba(245,237,216,.52);margin-bottom:32px" data-i18n="cl-desc">Nuestras clases se realizan en persona en Londres y est&aacute;n abiertas a cualquier persona interesada en la lengua y cultura quechua, sin importar su nivel previo.</p>
+        <div class="cta-row">
+          <a href="mailto:rimanakuy20@gmail.com" class="btn btn-g" data-i18n="cl-cta1">Inscribirse ahora</a>
+          <a href="#contacto" class="btn btn-o" data-i18n="cl-cta2">M&aacute;s informaci&oacute;n</a>
+        </div>
+        <div style="margin-top:26px;padding:16px 18px;background:rgba(200,146,42,.06);border:1px solid rgba(200,146,42,.18)">
+          <div style="font-family:'Cinzel',serif;font-size:9.5px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:5px" data-i18n="cl-fut-t">PR&Oacute;XIMOS CICLOS</div>
+          <p style="font-size:12.5px;line-height:1.7;color:rgba(245,237,216,.48)" data-i18n="cl-fut">Se programar&aacute;n nuevos ciclos regularmente. Escr&iacute;benos a rimanakuy20@gmail.com para ser notificado.</p>
+        </div>
+      </div>
+      <div class="flyer fi-anim d2">
+        <img src="peru1.jpg" alt="Quechua Machu Picchu" class="fly-img" onerror="this.style.display='none'">
+        <div class="fly-title">QUECHUA</div>
+        <div class="fly-sub" data-i18n="fly-sub">b&aacute;sico</div>
+        <div class="fd"><div class="fdi">&#128197;</div><div><div class="fdl" data-i18n="fd-ini">Inicio</div><div class="fdv">Mi&eacute;rcoles 9 de julio 2025</div></div></div>
+        <div class="fd"><div class="fdi">&#128566;</div><div><div class="fdl" data-i18n="fd-hor">Horario</div><div class="fdv">7:00 PM &ndash; 8:00 PM (Londres)</div></div></div>
+        <div class="fd"><div class="fdi">&#128647;</div><div><div class="fdl" data-i18n="fd-met">Metro</div><div class="fdv">Elephant and Castle</div></div></div>
+        <div class="fd"><div class="fdi">&#128205;</div><div><div class="fdl" data-i18n="fd-lug">Lugar</div><div class="fdv">11 Scovell Road, London SE1 1QQ</div></div></div>
+        <div class="fd"><div class="fdi">&#128155;</div><div><div class="fdl" data-i18n="fd-don">Donaci&oacute;n</div><div class="fdv">&pound;5 solidaria</div></div></div>
+        <div class="fd"><div class="fdi">&#128215;</div><div><div class="fdl" data-i18n="fd-dur">Duraci&oacute;n</div><div class="fdv">4 clases</div></div></div>
+        <div class="fly-em"><div class="fly-em-l" data-i18n="fly-em">Para inscribirse</div><a href="mailto:rimanakuy20@gmail.com">rimanakuy20@gmail.com</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="stripe-sm"></div>
+</section>
+
+<!-- COMPANEROS -->
+<section id="companeros">
+  <div class="sw">
+    <div class="eyebrow fi-anim"><span data-i18n="comp-eyebrow">Colaboradores</span><div class="eline"></div></div>
+    <h2 class="sec-title fi-anim" data-i18n="comp-title">Nuestros <span class="g">Compa&ntilde;eros</span></h2>
+    <p class="sec-lead fi-anim" data-i18n="comp-lead">Trabajamos en estrecha colaboraci&oacute;n con organizaciones que comparten nuestra misi&oacute;n de difundir y defender las culturas y lenguas ancestrales de las Am&eacute;ricas.</p>
+    <div class="partners fi-anim">
+      <div class="prt"><img src="perulogo.jpg" alt="Rimanakuy" class="prt-img" onerror="this.outerHTML='<div class=\'prt-name\'>&#127470;&#127466; Consulado del Per&uacute;</div>'"></div>
+      <div class="prt"><div class="prt-name">&#127968; Latin American House</div></div>
+      <div class="prt"><div class="prt-name">&#127470;&#127466; Consulado General<br>del Per&uacute; en Londres</div></div>
+      <div class="prt"><div class="prt-name">&#127912; Art PerUK</div></div>
+      <div class="prt"><div class="prt-name">&#128131; Baila Per&uacute;</div></div>
+      <div class="prt"><div class="prt-name">&#127859; Marcela Cocina</div></div>
+      <div class="prt"><div class="prt-name">&#129373; Picotea London</div></div>
+      <div class="prt"><div class="prt-name">&#127914; Con Pasi&oacute;n Per&uacute;</div></div>
+      <div class="prt"><div class="prt-name">&#127926; DJ Gustavo</div></div>
+      <div class="prt"><div class="prt-name">&#127810; El Peruchito</div></div>
+      <div class="prt"><div class="prt-name">&#127757; Lambeth Council</div></div>
+      <div class="prt"><div class="prt-name">&#127968; Great Family Warmis UK</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="stripe-sm"></div>
+  <div class="sw on-dark">
+    <div class="eyebrow fi-anim"><span data-i18n="c-eyebrow">Escr&iacute;benos</span><div class="eline" style="background:linear-gradient(90deg,rgba(200,146,42,.45),transparent)"></div></div>
+    <h2 class="sec-title fi-anim" style="color:var(--cream)" data-i18n="c-title">Contacto</h2>
+    <div class="cg2">
+      <div class="c-info fi-anim">
+        <div class="ci"><div class="ci-icon">&#9993;&#65039;</div><div><div class="ci-lbl" data-i18n="ci-em">Email</div><div class="ci-val">rimanakuy20@gmail.com</div></div></div>
+        <div class="ci"><div class="ci-icon">&#128205;</div><div><div class="ci-lbl" data-i18n="ci-loc">Ubicaci&oacute;n</div><div class="ci-val">Londres, Reino Unido<br><span style="font-size:11px;color:rgba(245,237,216,.45)">Elephant and Castle</span></div></div></div>
+        <div class="ci"><div class="ci-icon">&#127760;</div><div><div class="ci-lbl" data-i18n="ci-lang">Idiomas</div><div class="ci-val">Espa&ntilde;ol &middot; Quechua &middot; English</div></div></div>
+        <div class="socials">
+          <a href="https://www.facebook.com/people/Comunidad-Rimanakuy/100069733766715/" target="_blank" class="soc" title="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/comunidadrimanakuy/" target="_blank" class="soc" title="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+          <a href="https://www.youtube.com/@comunidadrimanakuy8173" target="_blank" class="soc" title="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.41 19.1C5.12 19.56 12 19.56 12 19.56s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#2A1A0A"/></svg></a>
+          <a href="https://open.spotify.com/show/0Bii1g36PPSETZw2SaXJgD" target="_blank" class="soc" title="Spotify"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8 13.5c2.5-1 5.5-.8 7.5.5" stroke="#2A1A0A" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M7.5 11c3-1.2 6.5-1 9 .8" stroke="#2A1A0A" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M7 8.5c3.5-1.4 7.5-1.2 10.5 1" stroke="#2A1A0A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <form class="c-form fi-anim d2" onsubmit="handleContact(event)">
+        <div class="frow">
+          <div><div class="flbl" data-i18n="cf-nom">Nombre *</div><input type="text" class="finp" required placeholder="Tu nombre"></div>
+          <div><div class="flbl" data-i18n="cf-em2">Email *</div><input type="email" class="finp" required placeholder="tu@email.com"></div>
+        </div>
+        <div><div class="flbl" data-i18n="cf-as">Asunto</div><input type="text" class="finp" placeholder="&#191;En qu&eacute; podemos ayudarte?"></div>
+        <div><div class="flbl" data-i18n="cf-msg">Mensaje *</div><textarea class="fta" rows="5" required placeholder="Escr&iacute;benos..."></textarea></div>
+        <button type="submit" class="btn btn-g" style="width:100%;text-align:center" data-i18n="cf-send">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+  <div class="stripe-sm"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="stripe" style="margin-bottom:44px;opacity:.42"></div>
+  <div class="fi-inner">
+    <div class="ftop">
+      <div>
+        <div class="fbname">RIMANAKUY</div>
+        <div class="fbsub" data-i18n="f-sub">Comunidad Andina &middot; Londres</div>
+        <p class="fbdesc" data-i18n="f-desc">Preservando la lengua quechua y la cultura andina en el coraz&oacute;n de Londres desde 2019.</p>
+      </div>
+      <div>
+        <div class="fc-title" data-i18n="f-nav">Navegaci&oacute;n</div>
+        <div class="flinks">
+          <a href="#hero" data-i18n="n-home">Inicio</a>
+          <a href="#mision" data-i18n="f-sobre">Sobre Nosotros</a>
+          <a href="#noticias" data-i18n="n-news">Noticias</a>
+          <a href="#galeria" data-i18n="n-gal">Galer&iacute;a</a>
+          <a href="#biblioteca" data-i18n="n-bib">Biblioteca</a>
+          <a href="#clases" data-i18n="n-clases">Clases</a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-title" data-i18n="f-idiomas">Idiomas</div>
+        <div class="flinks">
+          <a href="#" onclick="setLang('es',null)">&#127477;&#127466; Espa&ntilde;ol</a>
+          <a href="#" onclick="setLang('qu',null)">&#127984; Quechua</a>
+          <a href="#" onclick="setLang('en',null)">&#127468;&#127463; English</a>
+        </div>
+        <div class="fc-title" style="margin-top:22px" data-i18n="f-redes">Redes Sociales</div>
+        <div class="flinks">
+          <a href="https://www.facebook.com/people/Comunidad-Rimanakuy/100069733766715/" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com/comunidadrimanakuy/" target="_blank">Instagram</a>
+          <a href="https://www.youtube.com/@comunidadrimanakuy8173" target="_blank">YouTube</a>
+          <a href="https://open.spotify.com/show/0Bii1g36PPSETZw2SaXJgD" target="_blank">Spotify</a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-title" data-i18n="f-contact-t">Contacto</div>
+        <div class="flinks">
+          <a href="mailto:rimanakuy20@gmail.com">rimanakuy20@gmail.com</a>
+          <a href="#">Londres, Reino Unido</a>
+        </div>
+        <div style="margin-top:20px;padding:13px;background:rgba(200,146,42,.06);border:1px solid rgba(200,146,42,.12)">
+          <div class="fc-title" style="margin-bottom:6px" data-i18n="f-cl-t">Clases de Quechua</div>
+          <p style="font-size:11px;line-height:1.7;color:rgba(245,237,216,.32)" data-i18n="f-cl-d">Escr&iacute;benos para unirte al pr&oacute;ximo ciclo de clases en Londres.</p>
+        </div>
+      </div>
+    </div>
+    <div class="fbot">
+      <div class="fcopy" data-i18n="f-copy">&copy; 2025 Comunidad Rimanakuy. Todos los derechos reservados.</div>
+      <div class="flove" data-i18n="f-love">Hecho con &hearts; por Jose Miranda &amp; Daniela Miranda</div>
+    </div>
+  </div>
+</footer>
+
+<button class="admin-btn" onclick="openAP()">&#9881; Admin</button>
+
+<!-- ADMIN PANEL -->
+<div id="ap">
+  <div class="ap-inner">
+    <div class="ap-hdr">
+      <div class="ap-title">&#9881; Panel de Administraci&oacute;n</div>
+      <button class="ap-x" onclick="closeAP()">&#10005;</button>
+    </div>
+    <div id="aLogin">
+      <div class="a-login">
+        <div class="alt">ACCESO ADMIN</div>
+        <div class="als">Introduce tus credenciales para gestionar el sitio.</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,146,42,.78);font-weight:700;margin-bottom:3px">Usuario</div><input type="text" id="aU" class="finp" style="background:rgba(245,237,216,.05);border:1px solid rgba(200,146,42,.16);color:var(--cream)" placeholder="admin"></div>
+          <div><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,146,42,.78);font-weight:700;margin-bottom:3px">Contrase&ntilde;a</div><input type="password" id="aP" class="finp" style="background:rgba(245,237,216,.05);border:1px solid rgba(200,146,42,.16);color:var(--cream)" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"></div>
+          <button class="btn-login" onclick="doLogin()">Entrar al Panel &rarr;</button>
+          <div class="lerr" id="lerr">Credenciales incorrectas. (admin / rimanakuy2025)</div>
+        </div>
+      </div>
+    </div>
+    <div id="aCont" style="display:none">
+      <div class="ap-tabs">
+        <button class="atab active" onclick="showATab('posts',this)">&#128240; Publicaciones</button>
+        <button class="atab" onclick="showATab('events',this)">&#128197; Eventos</button>
+        <button class="atab" onclick="showATab('bib',this)">&#128218; Biblioteca</button>
+        <button class="atab" onclick="showATab('cfg',this)">&#9881; Config</button>
+      </div>
+      <div class="asec active" id="at-posts">
+        <h3>Publicaciones existentes</h3>
+        <div class="alist" id="aPostList"></div>
+        <h3>Nueva publicaci&oacute;n</h3>
+        <div class="aform">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div><div class="flbl">T&iacute;tulo *</div><input type="text" id="pTit" class="finp" placeholder="T&iacute;tulo"></div>
+            <div><div class="flbl">Categor&iacute;a</div><select id="pCat" class="fsel"><option>Evento Cultural</option><option>Educaci&oacute;n</option><option>Comunidad</option><option>Podcast</option><option>Noticias</option><option>Biblioteca</option></select></div>
+          </div>
+          <div><div class="flbl">Extracto</div><input type="text" id="pExc" class="finp" placeholder="Breve resumen..."></div>
+          <div><div class="flbl">Contenido</div><textarea id="pCont" class="fta" rows="4" placeholder="Contenido completo..."></textarea></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+            <div><div class="flbl">Fecha</div><input type="date" id="pDate" class="finp"></div>
+            <div><div class="flbl">Emoji</div><input type="text" id="pIcon" class="finp" placeholder="&#127914;" maxlength="4"></div>
+            <div><div class="flbl">Imagen (ej: peru6.jpg)</div><input type="text" id="pImg" class="finp" placeholder="peru6.jpg"></div>
+          </div>
+          <div style="display:flex;gap:10px">
+            <button class="btn btn-g" onclick="savePost()" style="flex:1">&#128190; Publicar</button>
+            <button onclick="clearPost()" style="flex:1;padding:12px;border:1px solid rgba(245,237,216,.14);background:none;color:rgba(245,237,216,.5);cursor:pointer;font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:1px">Limpiar</button>
+          </div>
+        </div>
+      </div>
+      <div class="asec" id="at-events">
+        <h3>Eventos existentes</h3>
+        <div class="alist" id="aEvList"></div>
+        <h3>Nuevo evento</h3>
+        <div class="aform">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div><div class="flbl">Nombre *</div><input type="text" id="eNom" class="finp" placeholder="Nombre del evento"></div>
+            <div><div class="flbl">Fecha</div><input type="date" id="eFech" class="finp"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div><div class="flbl">Hora</div><input type="text" id="eHor" class="finp" placeholder="7:00&ndash;8:00 PM"></div>
+            <div><div class="flbl">Precio / Donaci&oacute;n</div><input type="text" id="ePre" class="finp" placeholder="&pound;5 / Gratuito"></div>
+          </div>
+          <div><div class="flbl">Lugar</div><input type="text" id="eLoc" class="finp" placeholder="Direcci&oacute;n completa"></div>
+          <div><div class="flbl">Descripci&oacute;n</div><textarea id="eDesc" class="fta" rows="3" placeholder="Descripci&oacute;n del evento..."></textarea></div>
+          <button class="btn btn-g" onclick="saveEvent()">&#128197; A&ntilde;adir Evento</button>
+        </div>
+      </div>
+      <div class="asec" id="at-bib">
+        <h3>A&ntilde;adir documento a la Biblioteca</h3>
+        <div class="aform">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div><div class="flbl">T&iacute;tulo *</div><input type="text" id="bTit" class="finp" placeholder="T&iacute;tulo del documento"></div>
+            <div><div class="flbl">Autor</div><input type="text" id="bAut" class="finp" placeholder="Autor(es)"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+            <div><div class="flbl">Tipo</div><select id="bTip" class="fsel"><option>Manuscrito</option><option>Ling&uuml;&iacute;stica</option><option>Literatura Oral</option><option>Diccionario</option><option>Historia</option><option>Poes&iacute;a</option></select></div>
+            <div><div class="flbl">Idioma</div><select id="bLng" class="fsel"><option>Quechua</option><option>Espa&ntilde;ol</option><option>Biling&uuml;e</option></select></div>
+            <div><div class="flbl">A&ntilde;o</div><input type="text" id="bAno" class="finp" placeholder="2025"></div>
+          </div>
+          <div><div class="flbl">Descripci&oacute;n</div><textarea id="bDes" class="fta" rows="3" placeholder="Breve descripci&oacute;n..."></textarea></div>
+          <div><div class="flbl">URL / Enlace</div><input type="url" id="bUrl" class="finp" placeholder="https://..."></div>
+          <button class="btn btn-g" onclick="saveDoc()">&#128218; A&ntilde;adir a Biblioteca</button>
+        </div>
+        <h3 style="margin-top:28px">Documentos a&ntilde;adidos</h3>
+        <div class="alist" id="aDocList"></div>
+      </div>
+      <div class="asec" id="at-cfg">
+        <h3>Configuraci&oacute;n General</h3>
+        <div class="aform">
+          <div><div class="flbl">Email de contacto</div><input type="email" class="finp" value="rimanakuy20@gmail.com"></div>
+          <div><div class="flbl">Texto hero</div><textarea class="fta" rows="3">Asociaci&oacute;n cultural sin fines de lucro dedicada a conservar, promover y disfrutar el idioma quechua y la rica cultura andina.</textarea></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div><div class="flbl">Facebook</div><input type="url" class="finp" value="https://www.facebook.com/people/Comunidad-Rimanakuy/100069733766715/"></div>
+            <div><div class="flbl">Instagram</div><input type="url" class="finp" value="https://www.instagram.com/comunidadrimanakuy/"></div>
+          </div>
+          <button class="btn btn-g" onclick="showNotif('&#10003; Configuraci&oacute;n guardada.')">&#128190; Guardar Configuraci&oacute;n</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="notif" id="notif"></div>
+<script>
+/* ─── TRANSLATIONS ─── */
+const T = {
+es:{
+  'logo':'RIMANAKUY','logo-sub':'Comunidad Andina · Londres',
+  'n-home':'Inicio','n-mision':'Misión','n-news':'Noticias','n-gal':'Galería',
+  'n-bib':'Biblioteca','n-clases':'Clases','n-comp':'Compañeros','n-contact':'Contacto',
+  'h-eyebrow':'Fundada en 2019 · Londres, Reino Unido',
+  'h-qu':'Rimay = hablar · Nakuy = juntos',
+  'h-desc':'Asociación cultural sin fines de lucro dedicada a conservar, promover y disfrutar el idioma quechua y la rica cultura andina entre la comunidad latinoamericana en el Reino Unido.',
+  'h-cta1':'Clases de Quechua','h-cta2':'Nuestra Misión',
+  's1':'Fundación','s2':'Idiomas','s3':'Eventos','s4':'Cultura viva',
+  'c-lbl':'Próximos eventos','ver-evs':'Ver todos los eventos →',
+  'm-eyebrow':'Quiénes somos','m-title':'Misión',
+  'm-lead':'Un grupo comunitario sin fines de lucro dedicado a preservar las lenguas ancestrales latinoamericanas y actuar como red de apoyo cultural.',
+  'p1':'Promover, difundir y preservar las <strong>lenguas ancestrales latinoamericanas</strong>: quechua, aimara, mapuche, náhuatl, guaraní y más.',
+  'p2':'Asistir en la <strong>alfabetización de comunidades nativas</strong> y preservar su patrimonio escrito.',
+  'p3':'Ser <strong>punto de referencia y red de apoyo</strong> para la integración cultural de hablantes de lenguas originarias.',
+  'p4':'Proporcionar orientación en <strong>derechos laborales, inmigración y nacionalidad</strong>.',
+  'v-eyebrow':'Valores Andinos',
+  'v1es':'Reciprocidad','v1':'Asistencia mutua entre los miembros de la comunidad.',
+  'v2es':'Trabajo Comunal','v2':'Ayuda colectiva hacia un objetivo común.',
+  'v3es':'Unidad','v3':'Avanzando juntos a pesar de nuestras diferencias.',
+  'v4es':'Madre Tierra','v4':'Sumaq kawsay — la buena vida en armonía con la naturaleza.',
+  'ama-s':'No mintáis · No robes · No seas flojo — Los tres principios ancestrales andinos',
+  'news-eyebrow':'Noticias y Eventos','news-title':'Últimas <span class="g">Noticias</span>',
+  'news-lead':'Eventos culturales, clases y actividades de nuestra comunidad andina en Londres.',
+  'tag-ev':'Evento Cultural','tag-edu':'Educación','tag-cult':'Cultura',
+  'tag-com':'Comunidad','tag-bib':'Biblioteca','tag-pod':'Podcast',
+  'n1-t':'Inti Raymi – Fiesta del Sol 2025',
+  'n1-e':'Celebración del solsticio de verano con baile, música, danza, arte y gastronomía peruana.',
+  'n2-t':'Clases de Quechua Básico – Julio 2025',
+  'n2-e':'Nuevo ciclo de 4 clases. Miércoles 9 de julio, 7:00–8:00 PM. Donación solidaria £5.',
+  'n3-t':'Danza y Música Andina en Londres',
+  'n3-e':'Nuestros eventos celebran la riqueza de la danza y música andina.',
+  'n4-t':'Encuentros en Latin American House',
+  'n4-e':'Reuniones periódicas con música, baile y gastronomía peruana.',
+  'n5-t':'Biblioteca Virtual Quechua en Expansión',
+  'n5-e':'Nuevos documentos y recursos digitales añadidos a nuestra colección.',
+  'n6-t':'Nuevos Episodios en Spotify',
+  'n6-e':'Escucha nuestros podcasts sobre cultura andina e historia quechua.',
+  'ver-mas':'Ver más →','ongoing':'Continuo','monthly':'Mensual','explorar':'Explorar →','escuchar':'Escuchar →',
+  'g-eyebrow':'Momentos','g-title':'Galería',
+  'b-eyebrow':'Conocimiento Ancestral','b-main-title':'Biblioteca <span class="g">Virtual</span>',
+  'b-lead':'Catálogo especializado de documentos en quechua o sobre la lengua y las culturas andinas.',
+  'b-tab1':'📚 Catálogo','b-tab2':'📄 Documentos','b-tab3':'🎧 Archivo de Audio','b-tab4':'✍️ Contribuir',
+  'bc-title':'Explora Nuestra Colección',
+  'bc-desc':'Repositorio especializado de documentos publicados en quechua o sobre el idioma y las culturas andinas.',
+  'bc-desc2':'Si ha escrito un documento sobre quechua, considere depositarlo en esta biblioteca.',
+  'bl1t':'Documentos en Quechua','bl1s':'Textos escritos en lengua quechua',
+  'bl2t':'Estudios Lingüísticos','bl2s':'Investigaciones sobre la lengua quechua',
+  'bl3t':'Cultura y Arte Andino','bl3s':'Recursos culturales e históricos',
+  'bl4t':'Manuscritos Históricos','bl4s':'Documentos coloniales y precolombinos',
+  'dato-t':'DATO CULTURAL','dato-d':'El quechua es hablado por aprox. 8–10 millones de personas en Sudamérica.',
+  'docs-title':'Documentos Destacados',
+  'dt-ms':'Manuscrito','dt-lin':'Lingüística','dt-oral':'Literatura Oral',
+  'dt-dic':'Diccionario','dt-hist':'Historia','dt-poe':'Poesía',
+  'd1t':'Nueva corónica y buen gobierno','d1m':'Felipe Guamán Poma · c. 1615<br>Crónica ilustrada en quechua y español.',
+  'd2t':'Gramática del Quechua Cuzqueño','d2m':'Estudio académico sobre la variante más extendida del quechua.',
+  'd3t':'Huarochirí – Mitos Andinos','d3m':'Manuscrito del siglo XVII. Mitos y leyendas en quechua.',
+  'd4t':'Vocabulario Quechua-Español-Inglés','d4m':'Diccionario trilingüe de Comunidad Rimanakuy.',
+  'd5t':'Comentarios Reales de los Incas','d5m':'Análisis de la obra del Inca Garcilaso de la Vega.',
+  'd6t':'Harawi – Poesía Lírica Quechua','d6m':'Antología de harawi, forma poética de la tradición oral andina.',
+  'd-ver':'Ver documento →',
+  'au-title':'Archivo de Audio','au-desc':'Grabaciones de pronunciación quechua, canciones andinas, podcasts y recursos auditivos.',
+  'au-tag-pron':'Pronunciación','au-tag-mus':'Música Tradicional','au-tag-pod':'Podcast',
+  'au-tag-rit':'Canto Ritual','au-tag-lrn':'Para Aprender','au-tag-cnt':'Cuentos',
+  'au-na':'Disponible en Spotify y YouTube',
+  'au-spot':'Abrir en Spotify →','au-yt':'Ver en YouTube →',
+  'au1t':'Fonética Quechua Básica','au1d':'Guía de pronunciación del quechua cuzqueño.',
+  'au2t':'Huayno – Música Andina','au2d':'Huaynos tradicionales del altiplano andino.',
+  'au3t':'Comunidad Rimanakuy en Spotify','au3d':'Episodios sobre cultura andina e historia quechua.',
+  'au4t':'Cantos del Inti Raymi','au4d':'Cantos ceremoniales de la Fiesta del Sol.',
+  'au5t':'Diálogos Básicos en Quechua','au5d':'Diálogos cotidianos con traducción al español.',
+  'au6t':'Cuentos Andinos – Tradición Oral','au6d':'Leyendas quechua narradas con subtítulos en español.',
+  'co-title':'Contribuye a la Biblioteca',
+  'co-desc':'¿Has escrito un documento sobre quechua? Comparte tu trabajo con nuestra comunidad global.',
+  'cs1':'Completa el formulario con los <strong>datos de tu documento</strong>.',
+  'cs2':'Adjunta el archivo en formato <strong>PDF, DOCX o enlace externo</strong>.',
+  'cs3':'Nuestro equipo <strong>revisará y publicará</strong> tu contribución.',
+  'co-tipos-t':'TIPOS ACEPTADOS',
+  'co-tipos':'Estudios lingüísticos · Gramáticas · Diccionarios · Literatura oral · Poesía quechua · Historia andina',
+  'cf-tit':'Título del documento *','cf-aut':'Autor(es) *','cf-tipo':'Tipo','cf-idioma':'Idioma',
+  'cf-desc':'Descripción breve','cf-ema':'Tu email *','cf-sub':'Enviar Contribución →',
+  'cl-eyebrow':'Aprende Quechua','cl-title':'Quechua',
+  'cl-lead':'Aprende la lengua de los Incas con nuestra comunidad. Clases accesibles para todos los niveles.',
+  'cl-desc':'Nuestras clases se realizan en persona en Londres, abiertas a cualquier persona interesada.',
+  'cl-cta1':'Inscribirse ahora','cl-cta2':'Más información',
+  'cl-fut-t':'PRÓXIMOS CICLOS',
+  'cl-fut':'Se programarán nuevos ciclos regularmente. Escríbenos a rimanakuy20@gmail.com.',
+  'fly-sub':'básico','fd-ini':'Inicio','fd-hor':'Horario','fd-met':'Metro',
+  'fd-lug':'Lugar','fd-don':'Donación','fd-dur':'Duración','fly-em':'Para inscribirse',
+  'comp-eyebrow':'Colaboradores','comp-title':'Compañeros',
+  'comp-lead':'Trabajamos con organizaciones que comparten nuestra misión de difundir y defender las culturas ancestrales de las Américas.',
+  'c-eyebrow':'Escríbenos','c-title':'Contacto',
+  'ci-em':'Email','ci-loc':'Ubicación','ci-lang':'Idiomas',
+  'cf-nom':'Nombre *','cf-em2':'Email *','cf-as':'Asunto','cf-msg':'Mensaje *','cf-send':'Enviar Mensaje',
+  'f-sub':'Comunidad Andina · Londres',
+  'f-desc':'Preservando la lengua quechua y la cultura andina en el corazón de Londres desde 2019.',
+  'f-nav':'Navegación','f-sobre':'Sobre Nosotros','f-idiomas':'Idiomas','f-redes':'Redes Sociales',
+  'f-contact-t':'Contacto','f-cl-t':'Clases de Quechua',
+  'f-cl-d':'Escríbenos para unirte al próximo ciclo de clases en Londres.',
+  'f-copy':'© 2025 Comunidad Rimanakuy. Todos los derechos reservados.',
+  'f-love':'Hecho con ❤️ por Jose Miranda & Daniela Miranda',
+  'h-eyebrow':'Fundada en 2019 · Londres, Reino Unido'
+},
+qu:{
+  'logo':'RIMANAKUY','logo-sub':'Andina Llaqta · Lundresman',
+  'n-home':'Qallariy','n-mision':'Munay','n-news':'Willakuy','n-gal':'Rikuchiy',
+  'n-bib':'Qillqakuna','n-clases':'Yachakuy','n-comp':'Masikuna','n-contact':'Rimay',
+  'h-eyebrow':'2019-pi rurasqa · Lundresman, Inglatirrapi',
+  'h-qu':'Rimay = rimay · Nakuy = kuska',
+  'h-desc':'Mana qullqipaq llaqta ukhu quechua simipi kawsay, wiñachiy, kusikuy rurayninchik.',
+  'h-cta1':'Quechua Yachakuy','h-cta2':'Ñuqaykuq Munay',
+  's1':'Qallariy','s2':'Simikuna','s3':'Tinkuykuna','s4':'Kawsaq kultuta',
+  'c-lbl':'Qatiqnin tinkuykuna','ver-evs':'Llapan tinkuykuna →',
+  'm-eyebrow':'Pitaq kanchik','m-title':'Ñuqaykuq Munay',
+  'm-lead':'Mana qullqipaq llaqta ukhu qallariy wiñachiy Latin Amerika simi simikunata.',
+  'p1':'Rimachiy wiñachiy <strong>Latin Amerika mamá simikuna</strong>: quechua, aimara, mapuche, náhuatl, guaraní.',
+  'p2':'Yanapay <strong>qillqa yachay</strong> llaqtakunapi.',
+  'p3':'<strong>Tarikuq, yanapakuq</strong> kachun runa simikuq runakunapaq.',
+  'p4':'Yachachiy <strong>llankay, hamuq, llaqta</strong> rimaypi.',
+  'v-eyebrow':'Andina Yachay',
+  'v1es':'Kuska Kay','v1':'Kuska yanapanakuy llaqta runakuna ukhu.',
+  'v2es':'Llankay Ukhu','v2':'Llaqta kuska llankay, llapanpaq allin.',
+  'v3es':'Tinkuy','v3':'Kuska puriy huk hukninchikpim.',
+  'v4es':'Pachamama','v4':'Sumaq kawsay — allin kawsay Pachamama ukhupi.',
+  'ama-s':'Ama llulla · Ama quella · Ama suwa — Kimsa andina yachay',
+  'news-eyebrow':'Willakuykuna','news-title':'Qatiqnin <span class="g">Willakuy</span>',
+  'news-lead':'Tinkuykuna, yachakuy, llaqta ruraykunam Lundrespi.',
+  'tag-ev':'Tinkuy','tag-edu':'Yachakuy','tag-cult':'Kultuta',
+  'tag-com':'Llaqta','tag-bib':'Qillqakuna','tag-pod':'Rimay',
+  'n1-t':'Inti Raymi – Inti Raymipim 2025','n1-e':'Inti chawpi punchay tinkuy tusuy, takiy, Piruw mikhuy.',
+  'n2-t':'Quechua Qallariy Yachakuy – Julio 2025','n2-e':'Tawa yachakuykuna. Miércoles julio 9, 19:00–20:00.',
+  'n3-t':'Andina Tusuy Takiy Lundrespi','n3-e':'Ñuqaykuq tinkuykuna andina tusuy takiypi.',
+  'n4-t':'Llaqta Tinkuykuna Latin American House ukhupi','n4-e':'Takiy, tusuy, Piruw mikhuy kuska llaqtanchikwan.',
+  'n5-t':'Quechua Qillqa Wasiqa Wiñashanmi','n5-e':'Musuq qillqakuna ñuqaykuq colección ukhupi.',
+  'n6-t':'Musuq Rimakuy Spotifypi','n6-e':'Uyariy andina kultuta rimakuykuna.',
+  'ver-mas':'Aswantam →','ongoing':'Qatiqnin','monthly':'Killapi','explorar':'Qhawakuy →','escuchar':'Uyariy →',
+  'g-eyebrow':'Qhawariynin','g-title':'Rikuchiy',
+  'b-eyebrow':'Ñawpaq Yachay','b-main-title':'Qillqakuna <span class="g">Wasi</span>',
+  'b-lead':'Quechua simipi qillqasqa documentokunap catálogo.',
+  'b-tab1':'📚 Catálogo','b-tab2':'📄 Qillqakuna','b-tab3':'🎧 Uyariy','b-tab4':'✍️ Yaykuy',
+  'bc-title':'Ñuqaykuq Colecciónta Qhaway','bc-desc':'Quechua simipi ruwasqa documentokunap repositorio.',
+  'bc-desc2':'Quechua simipi qillqasqaykita waqaychanapaq kay wasipi churay.',
+  'bl1t':'Quechua Simipi Qillqakuna','bl1s':'Quechua simipi qillqasqa textos',
+  'bl2t':'Simi Yachay','bl2s':'Quechua simi investigaciones',
+  'bl3t':'Andina Kultuta Arte','bl3s':'Kultuta historia recursos',
+  'bl4t':'Ñawpaq Qillqanakuna','bl4s':'Colonial precolombino documentos',
+  'dato-t':'KULTUTA RIQSIY','dato-d':'Quechua simipi rimay 8–10 millones runa Sudaméricapi.',
+  'docs-title':'Allin Qillqakuna',
+  'dt-ms':'Qillqana','dt-lin':'Simi Yachay','dt-oral':'Oral Literatura',
+  'dt-dic':'Diccionario','dt-hist':'Historia','dt-poe':'Harawi',
+  'd1t':'Musuq Qillqana Allin Kawsaypaq','d1m':'Guamán Poma · c. 1615',
+  'd2t':'Quechua Cuzqueño Gramática','d2m':'Quechua mama simi académico yachay.',
+  'd3t':'Huarochirí – Andina Willakuykuna','d3m':'Huarochirí qillqana, XVII siglo.',
+  'd4t':'Quechua-Español-Inglés Rimay Libro','d4m':'Quechua yachakuypaq diccionario.',
+  'd5t':'Inka Garcilaso Comentarios Reales','d5m':'Inka Peru colonial kultuta.',
+  'd6t':'Harawi – Quechua Takiy Llaqtapi','d6m':'Quechua oral tradición harawi.',
+  'd-ver':'Qhaway →',
+  'au-title':'Uyariy Wasi','au-desc':'Quechua rimay, andina takiy, podcast uyariy.',
+  'au-tag-pron':'Rimay','au-tag-mus':'Ñawpaq Takiy','au-tag-pod':'Rimakuy',
+  'au-tag-rit':'Takiy','au-tag-lrn':'Yachakuqpaq','au-tag-cnt':'Willakuy',
+  'au-na':'Spotifypi, YouTubepi tiyan',
+  'au-spot':'Spotify ukhupi →','au-yt':'YouTube ukhupi →',
+  'au1t':'Quechua Rimay Qallariy','au1d':'Quechua cuzqueño simi rimay guía.',
+  'au2t':'Huayno – Andina Takiy','au2d':'Ñawpaq altiplano andino huayno takiykuna.',
+  'au3t':'Rimanakuy Llaqta Spotifypi','au3d':'Andina kultuta, quechua historia rimakuy.',
+  'au4t':'Inti Raymi Takiykuna','au4d':'Inti Raymi takiy ceremonial grabaciones.',
+  'au5t':'Quechua Rimanakuy Qallariy','au5d':'Quechua cuzqueño rimanakuy español tikraymantawan.',
+  'au6t':'Andina Willakuykuna','au6d':'Quechua willakuy andina tradición oral.',
+  'co-title':'Qillqakuna Wasipi Yaykuy','co-desc':'Quechua simipi qillqasqaykitichu? Ñuqaykuq llaqtawan chaskinki.',
+  'cs1':'Qillqakipi <strong>tukuy willakuykunata</strong> juchuy.',
+  'cs2':'PDF, DOCX imanispa <strong>llankasqaykita</strong> apamuy.',
+  'cs3':'Ñuqaykuq team <strong>qhawarispa churanqa</strong> collectiónpi.',
+  'co-tipos-t':'CHASQIY ATIYNIN','co-tipos':'Simi yachay · Gramática · Diccionario · Oral literatura · Quechua harawi · Andina historia',
+  'cf-tit':'Qillqaki sutinmi *','cf-aut':'Qillqaq *','cf-tipo':'Tipo','cf-idioma':'Simi',
+  'cf-desc':'Juchuy willakuy','cf-ema':'Email *','cf-sub':'Apamuy →',
+  'cl-eyebrow':'Quechua Yachakuy','cl-title':'Quechua',
+  'cl-lead':'Inka simipi rimay yachay ñuqaykuwan. Llapanpaqmi kicharisqa.',
+  'cl-desc':'Ñuqaykuq yachakuykuna Lundrespi, maymanpis munaqpaqmi.',
+  'cl-cta1':'Kunanmi qillqakuy','cl-cta2':'Aswan willakuy',
+  'cl-fut-t':'QATIQNIN YACHAKUY','cl-fut':'Musuq yachakuykuna riqsirqanku. rimanakuy20@gmail.com nispa qillqaway.',
+  'fly-sub':'qallariy','fd-ini':'Qallariy','fd-hor':'Pacha','fd-met':'Tren',
+  'fd-lug':'Chayay','fd-don':'Qullqi','fd-dur':'Unay','fly-em':'Qillqakuypaq',
+  'comp-eyebrow':'Llankaqkuna','comp-title':'Masikuna',
+  'comp-lead':'Kuska llankay wawqikusman, Latin Amerika kultutata wiñachiy.',
+  'c-eyebrow':'Qillqaway','c-title':'Rimay',
+  'ci-em':'Email','ci-loc':'Chayay','ci-lang':'Simikuna',
+  'cf-nom':'Sutiy *','cf-em2':'Email *','cf-as':'Ima','cf-msg':'Willakuy *','cf-send':'Apakuy',
+  'f-sub':'Andina Llaqta · Lundresman','f-desc':'Quechua simipi wiñachiy, andina kultuta Lundrespi 2019-mantam.',
+  'f-nav':'Puriy','f-sobre':'Ñuqaykumanta','f-idiomas':'Simikuna','f-redes':'Redes',
+  'f-contact-t':'Rimay','f-cl-t':'Quechua Yachakuy','f-cl-d':'Qillqaway musuq yachakuyta qallarinapaq.',
+  'f-copy':'© 2025 Comunidad Rimanakuy. Llapan atiykunam.',
+  'f-love':'Munaywan ruwasqa Jose Miranda & Daniela Miranda',
+  'h-eyebrow':'2019-pi rurasqa · Lundresman, Inglatirrapi'
+},
+en:{
+  'logo':'RIMANAKUY','logo-sub':'Andean Community · London',
+  'n-home':'Home','n-mision':'Mission','n-news':'News','n-gal':'Gallery',
+  'n-bib':'Library','n-clases':'Classes','n-comp':'Partners','n-contact':'Contact',
+  'h-eyebrow':'Founded in 2019 · London, United Kingdom',
+  'h-qu':'Rimay = to speak · Nakuy = together',
+  'h-desc':'A non-profit cultural association dedicated to conserving, promoting and celebrating the Quechua language and the rich Andean culture among the Latin American community in the United Kingdom.',
+  'h-cta1':'Quechua Classes','h-cta2':'Our Mission',
+  's1':'Founded','s2':'Languages','s3':'Events','s4':'Living culture',
+  'c-lbl':'Upcoming events','ver-evs':'See all events →',
+  'm-eyebrow':'Who we are','m-title':'Mission',
+  'm-lead':'A non-profit community group dedicated to preserving Latin American ancestral languages and acting as a cultural support network.',
+  'p1':'Promote, spread and preserve <strong>Latin American ancestral languages</strong>: Quechua, Aymara, Mapuche, Nahuatl, Guaraní and more.',
+  'p2':'Support <strong>literacy in native communities</strong> and preserve their written heritage.',
+  'p3':'Act as <strong>a reference point and support network</strong> for ancestral language speakers.',
+  'p4':'Provide guidance on <strong>labour rights, immigration and nationality</strong>.',
+  'v-eyebrow':'Andean Values',
+  'v1es':'Reciprocity','v1':'Mutual assistance among community members.',
+  'v2es':'Communal Work','v2':'Collective help towards a common goal.',
+  'v3es':'Unity','v3':'Moving forward together despite our differences.',
+  'v4es':'Mother Earth','v4':'Sumaq kawsay — a good life in harmony with nature.',
+  'ama-s':'Do not lie · Do not steal · Do not be lazy — The three Andean principles',
+  'news-eyebrow':'News & Events','news-title':'Latest <span class="g">News</span>',
+  'news-lead':'Cultural events, classes and activities from our Andean community in London.',
+  'tag-ev':'Cultural Event','tag-edu':'Education','tag-cult':'Culture',
+  'tag-com':'Community','tag-bib':'Library','tag-pod':'Podcast',
+  'n1-t':'Inti Raymi – Festival of the Sun 2025','n1-e':'Summer solstice with dancing, music, Peruvian food. Ceviche, pisco sour and Andean culture.',
+  'n2-t':'Basic Quechua Classes – July 2025','n2-e':'New 4-class cycle. Wednesdays 9 July, 7–8 PM. Solidarity donation £5.',
+  'n3-t':'Andean Dance & Music in London','n3-e':'Our events celebrate Andean dance and music, connecting the Peruvian community with its roots.',
+  'n4-t':'Community Gatherings at Latin American House','n4-e':'Regular meetings with music, dance and Peruvian gastronomy.',
+  'n5-t':'Virtual Quechua Library Expanding','n5-e':'New documents and digital resources added to our specialised collection.',
+  'n6-t':'New Episodes on Spotify','n6-e':'Listen to our podcasts about Andean culture and Quechua history.',
+  'ver-mas':'Read more →','ongoing':'Ongoing','monthly':'Monthly','explorar':'Explore →','escuchar':'Listen →',
+  'g-eyebrow':'Moments','g-title':'Gallery',
+  'b-eyebrow':'Ancestral Knowledge','b-main-title':'Virtual <span class="g">Library</span>',
+  'b-lead':'Specialised catalogue of documents in Quechua or about the language and Andean cultures.',
+  'b-tab1':'📚 Catalogue','b-tab2':'📄 Documents','b-tab3':'🎧 Audio Archive','b-tab4':'✍️ Contribute',
+  'bc-title':'Explore Our Collection',
+  'bc-desc':'The Virtual Library is a specialised repository of documents published in Quechua or about the language and Andean cultures.',
+  'bc-desc2':'If you have written a document about Quechua, consider depositing a copy in this library.',
+  'bl1t':'Documents in Quechua','bl1s':'Texts written in the Quechua language',
+  'bl2t':'Linguistic Studies','bl2s':'Research on the Quechua language',
+  'bl3t':'Andean Culture & Art','bl3s':'Cultural and historical resources',
+  'bl4t':'Historical Manuscripts','bl4s':'Colonial and pre-Columbian documents',
+  'dato-t':'CULTURAL FACT','dato-d':'Quechua is spoken by approx. 8–10 million people in South America.',
+  'docs-title':'Featured Documents',
+  'dt-ms':'Manuscript','dt-lin':'Linguistics','dt-oral':'Oral Literature',
+  'dt-dic':'Dictionary','dt-hist':'History','dt-poe':'Poetry',
+  'd1t':'Nueva corónica y buen gobierno','d1m':'Guamán Poma de Ayala · c. 1615',
+  'd2t':'Grammar of Cuzco Quechua','d2m':'Academic study on the most widespread Quechua variant.',
+  'd3t':'Huarochirí – Andean Myths','d3m':'17th-century manuscript of Andean myths in Quechua.',
+  'd4t':'Quechua-Spanish-English Vocabulary','d4m':'Trilingual dictionary from Comunidad Rimanakuy.',
+  'd5t':'Royal Commentaries of the Incas','d5m':'Analysis of Inca Garcilaso's masterwork.',
+  'd6t':'Harawi – Quechua Lyric Poetry','d6m':'Anthology of harawi from the Andean oral tradition.',
+  'd-ver':'View document →',
+  'au-title':'Audio Archive','au-desc':'Quechua pronunciation recordings, Andean songs, podcasts and audio resources.',
+  'au-tag-pron':'Pronunciation','au-tag-mus':'Traditional Music','au-tag-pod':'Podcast',
+  'au-tag-rit':'Ritual Chant','au-tag-lrn':'For Learning','au-tag-cnt':'Stories',
+  'au-na':'Available on Spotify and YouTube',
+  'au-spot':'Open in Spotify →','au-yt':'Watch on YouTube →',
+  'au1t':'Basic Quechua Phonetics','au1d':'Pronunciation guide for Cuzco Quechua.',
+  'au2t':'Huayno – Andean Music','au2d':'Traditional huaynos from the Andean plateau.',
+  'au3t':'Comunidad Rimanakuy on Spotify','au3d':'Episodes on Andean culture and Quechua history.',
+  'au4t':'Inti Raymi Chants','au4d':'Ceremonial chants from the Festival of the Sun.',
+  'au5t':'Basic Dialogues in Quechua','au5d':'Everyday dialogues with Spanish translation.',
+  'au6t':'Andean Stories – Oral Tradition','au6d':'Quechua legends narrated with Spanish subtitles.',
+  'co-title':'Contribute to the Library','co-desc':'Have you written a document about Quechua? Share your work with our global community.',
+  'cs1':'Complete the form with your <strong>document details</strong>.',
+  'cs2':'Attach the file as <strong>PDF, DOCX or external link</strong>.',
+  'cs3':'Our team will <strong>review and publish</strong> your contribution.',
+  'co-tipos-t':'ACCEPTED TYPES','co-tipos':'Linguistic studies · Grammars · Dictionaries · Oral literature · Quechua poetry · Andean history',
+  'cf-tit':'Document title *','cf-aut':'Author(s) *','cf-tipo':'Type','cf-idioma':'Language',
+  'cf-desc':'Brief description','cf-ema':'Your email *','cf-sub':'Submit Contribution →',
+  'cl-eyebrow':'Learn Quechua','cl-title':'Quechua',
+  'cl-lead':'Learn the language of the Incas. Classes accessible for all levels.',
+  'cl-desc':'Our classes take place in person in London, open to anyone interested in the Quechua language.',
+  'cl-cta1':'Register now','cl-cta2':'More information',
+  'cl-fut-t':'UPCOMING CYCLES','cl-fut':'New cycles scheduled regularly. Email rimanakuy20@gmail.com.',
+  'fly-sub':'basic','fd-ini':'Start','fd-hor':'Time','fd-met':'Tube',
+  'fd-lug':'Venue','fd-don':'Donation','fd-dur':'Duration','fly-em':'To register',
+  'comp-eyebrow':'Collaborators','comp-title':'Partners',
+  'comp-lead':'We work with organisations sharing our mission to spread and defend the ancestral cultures of the Americas.',
+  'c-eyebrow':'Write to us','c-title':'Contact',
+  'ci-em':'Email','ci-loc':'Location','ci-lang':'Languages',
+  'cf-nom':'Name *','cf-em2':'Email *','cf-as':'Subject','cf-msg':'Message *','cf-send':'Send Message',
+  'f-sub':'Andean Community · London',
+  'f-desc':'Preserving the Quechua language and Andean culture in the heart of London since 2019.',
+  'f-nav':'Navigation','f-sobre':'About Us','f-idiomas':'Languages','f-redes':'Social Media',
+  'f-contact-t':'Contact','f-cl-t':'Quechua Classes',
+  'f-cl-d':'Write to us to join the next cycle of classes in London.',
+  'f-copy':'© 2025 Comunidad Rimanakuy. All rights reserved.',
+  'f-love':'Made with ❤️ by Jose Miranda & Daniela Miranda',
+  'h-eyebrow':'Founded in 2019 · London, United Kingdom'
+}
+};
+
+let curLang='es';
+function setLang(lang,btn){
+  curLang=lang;
+  document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  else{const bs=document.querySelectorAll('.lbtn');['es','qu','en'].forEach((l,i)=>{if(l===lang)bs[i].classList.add('active');})}
+  const t=T[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(t[k]!==undefined)el.innerHTML=t[k];
+  });
+  document.documentElement.lang=lang;
+}
+
+/* SCROLL ANIMATIONS */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:0.08});
+document.querySelectorAll('.fi-anim').forEach(el=>obs.observe(el));
+
+/* NAV */
+document.getElementById('ham').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+const secs=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+});
+
+/* BIBLIOTECA TABS */
+function showBib(id,btn){
+  document.querySelectorAll('.bsec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.btab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('bib-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* LIGHTBOX */
+function openLb(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('open');}
+function closeLb(){document.getElementById('lb').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLb();closeAP();}});
+
+/* CONTACT */
+function handleContact(e){e.preventDefault();showNotif('✓ Mensaje enviado. ¡Gracias!');e.target.reset();}
+
+/* NOTIFICATION */
+function showNotif(msg){
+  const el=document.getElementById('notif');
+  el.innerHTML=msg;el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'),3500);
+}
+
+/* ADMIN */
+function openAP(){document.getElementById('ap').classList.add('open');}
+function closeAP(){document.getElementById('ap').classList.remove('open');}
+function doLogin(){
+  const u=document.getElementById('aU').value;
+  const p=document.getElementById('aP').value;
+  if(u==='admin'&&p==='rimanakuy2025'){
+    document.getElementById('aLogin').style.display='none';
+    document.getElementById('aCont').style.display='block';
+    renderPosts();renderEvents();renderDocs();
+    document.getElementById('lerr').style.display='none';
+  }else{document.getElementById('lerr').style.display='block';}
+}
+document.getElementById('aP').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+function showATab(id,btn){
+  document.querySelectorAll('.asec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.atab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('at-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* DATA */
+let posts=JSON.parse(localStorage.getItem('rk_posts')||'[]');
+let events=JSON.parse(localStorage.getItem('rk_events')||'[]');
+let docs=JSON.parse(localStorage.getItem('rk_docs')||'[]');
+function savePosts(){localStorage.setItem('rk_posts',JSON.stringify(posts));}
+function saveEvents(){localStorage.setItem('rk_events',JSON.stringify(events));}
+function saveDocs(){localStorage.setItem('rk_docs',JSON.stringify(docs));}
+
+function renderList(cid,items,lf,df){
+  const el=document.getElementById(cid);
+  if(!items.length){el.innerHTML='<p style="font-size:12px;color:rgba(245,237,216,.32)">No hay entradas.</p>';return;}
+  el.innerHTML=items.map(it=>`<div class="aitem"><div>${lf(it)}</div><div><button class="btn-dl" onclick="${df}(${it.id})">✕ Eliminar</button></div></div>`).join('');
+}
+function renderPosts(){renderList('aPostList',posts,p=>`<div class="ai-title">${p.icon||'📄'} ${p.title}</div><div class="ai-meta">${p.cat} · ${p.date}</div>`,'delPost');}
+function renderEvents(){renderList('aEvList',events,ev=>`<div class="ai-title">📅 ${ev.name}</div><div class="ai-meta">${ev.date} · ${ev.loc}</div>`,'delEvent');}
+function renderDocs(){renderList('aDocList',docs,d=>`<div class="ai-title">📄 ${d.title}</div><div class="ai-meta">${d.type} · ${d.lang}</div>`,'delDoc');}
+
+function savePost(){
+  const tit=document.getElementById('pTit').value.trim();
+  if(!tit){showNotif('⚠ Título obligatorio');return;}
+  const p={id:Date.now(),title:tit,cat:document.getElementById('pCat').value,
+    exc:document.getElementById('pExc').value,cont:document.getElementById('pCont').value,
+    date:document.getElementById('pDate').value||new Date().toISOString().split('T')[0],
+    icon:document.getElementById('pIcon').value||'📄',img:document.getElementById('pImg').value||''};
+  posts.unshift(p);savePosts();renderPosts();addNewsCard(p);clearPost();
+  showNotif('✓ Publicación añadida y visible en Noticias.');
+}
+function addNewsCard(p){
+  const g=document.getElementById('newsGrid');
+  const c=document.createElement('div');c.className='nc fi-anim';
+  c.innerHTML=(p.img?`<img class="nc-img" src="${p.img}" alt="${p.title}" onerror="this.outerHTML='<div class=\'nc-ph\'><span class=\'nc-phi\'>${p.icon}</span></div>'">`:`<div class="nc-ph"><span class="nc-phi">${p.icon}</span></div>`)+
+    `<div class="nc-body"><span class="nc-tag">${p.cat}</span><h3 class="nc-title">${p.title}</h3><p class="nc-exc">${p.exc}</p><div class="nc-foot"><span class="nc-date">${p.date}</span><a href="#" class="nc-link">Ver más →</a></div></div>`;
+  g.insertBefore(c,g.firstChild);setTimeout(()=>obs.observe(c),100);
+}
+function delPost(id){posts=posts.filter(p=>p.id!==id);savePosts();renderPosts();showNotif('Publicación eliminada.');}
+function clearPost(){['pTit','pExc','pCont','pDate','pIcon','pImg'].forEach(id=>document.getElementById(id).value='');document.getElementById('pCat').selectedIndex=0;}
+
+function saveEvent(){
+  const n=document.getElementById('eNom').value.trim();if(!n){showNotif('⚠ Nombre obligatorio');return;}
+  const ev={id:Date.now(),name:n,date:document.getElementById('eFech').value,time:document.getElementById('eHor').value,
+    loc:document.getElementById('eLoc').value,price:document.getElementById('ePre').value,desc:document.getElementById('eDesc').value};
+  events.unshift(ev);saveEvents();renderEvents();addHeroEvent(ev);
+  ['eNom','eFech','eHor','eLoc','ePre','eDesc'].forEach(id=>document.getElementById(id).value='');
+  showNotif('✓ Evento añadido.');
+}
+function addHeroEvent(ev){
+  const c=document.getElementById('heroEvs');if(!c)return;
+  const d=document.createElement('div');d.className='ev-item';
+  d.innerHTML=`<div class="ev-date">📅 ${ev.date} · ${ev.time}</div><div class="ev-name">${ev.name}</div><div class="ev-loc">📍 ${ev.loc}</div>`;
+  c.insertBefore(d,c.firstChild);
+}
+function delEvent(id){events=events.filter(e=>e.id!==id);saveEvents();renderEvents();showNotif('Evento eliminado.');}
+
+function saveDoc(){
+  const t=document.getElementById('bTit').value.trim();if(!t){showNotif('⚠ Título obligatorio');return;}
+  const d={id:Date.now(),title:t,author:document.getElementById('bAut').value,
+    type:document.getElementById('bTip').value,lang:document.getElementById('bLng').value,
+    year:document.getElementById('bAno').value,desc:document.getElementById('bDes').value,url:document.getElementById('bUrl').value};
+  docs.unshift(d);saveDocs();renderDocs();addDocCard(d);
+  ['bTit','bAut','bAno','bDes','bUrl'].forEach(id=>document.getElementById(id).value='');
+  showNotif('✓ Documento añadido a la Biblioteca.');
+}
+function addDocCard(d){
+  const g=document.getElementById('docsGrid');if(!g)return;
+  const c=document.createElement('div');c.className='dc';
+  c.innerHTML=`<div class="dc-type">${d.type}</div><div class="dc-title">${d.title}</div><div class="dc-meta">${d.author} · ${d.year}<br>${d.desc}</div>${d.url?`<a href="${d.url}" target="_blank" class="dc-cta">Ver documento →</a>`:''}`;
+  g.insertBefore(c,g.firstChild);
+}
+function delDoc(id){docs=docs.filter(d=>d.id!==id);saveDocs();renderDocs();showNotif('Documento eliminado.');}
+
+/* Restore saved data */
+document.addEventListener('DOMContentLoaded',()=>{
+  const td=new Date().toISOString().split('T')[0];
+  document.getElementById('pDate').value=td;
+  document.getElementById('eFech').value=td;
+  posts.forEach(p=>addNewsCard(p));
+  events.forEach(ev=>addHeroEvent(ev));
+  docs.forEach(d=>addDocCard(d));
+});
+</script>
+</body>
+</html>
